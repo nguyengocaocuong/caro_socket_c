@@ -1,0 +1,59 @@
+#ifndef SERVER_CONSTANT_H
+#define SERVER_CONSTANT_H
+
+#define SEPARATOR "#"
+#define SEPARATOR_HISTORY "|"
+
+#define X_ICON 1
+#define O_ICON 2
+
+#define NEXT_YOU 1
+#define NEXT_NOT_YOU 2
+
+#define TAG_CLIENT 1
+#define TAG_FRIEND 2
+#define TAG_HISTORY 3
+#define TAG_ACCOUNT 4
+
+#define MAX_LEN_BUFF 1024
+#define MAX_ACCEPT_CLIENT 20
+
+
+#define CLIENT_STATUS_OF 1
+#define CLIENT_STATUS_ON 2
+#define CLIENT_STATUS_NOT_ALREADY 3
+
+
+
+#define IS_MACHINE 1
+#define NOT_MACHINE 2
+
+#define LOG_SEND "SEND"
+#define LOG_RECV "RECV"
+
+
+#define PREFIX_SUCCESS "$OK"
+#define PREFIX_FAIL "$FAIL"
+#define PREFIX_LOGIN "$LOGIN"
+#define PREFIX_REGISTER "$REGISTER"
+#define PREFIX_HISTORY "$HISTORY"
+#define PREFIX_ONLINE "$ONLINE"
+#define PREFIX_MESSAGE "$MESSAGE"
+#define PREFIX_CELL "$CELL"
+#define PREFIX_ADD_FRIEND "$ADD"
+#define PREFIX_NEW_GAME "$NEW_GAME"
+#define PREFIX_CLOSE "$CLOSE"
+#define PREFIX_ACCEPT_PLAY "$ACCEPT_PLAY"
+#define PREFIX_PLAY "$PLAY"
+#define PREFIX_FAIL_REQUEST_NEW_GAME "$FAIL_REQUEST_NEW_GAME"
+#define PREFIX_END_GAME "$END_GAME"
+
+#define GAME_STATUS_WIN 1
+#define GAME_STATUS_NEXT_CELL 2
+
+#define FILE_ACCOUNT "data/account.txt"
+#define FILE_HISTORY "data/history.txt"
+#define FILE_FRIEND "data/friend.txt"
+
+#endif
+

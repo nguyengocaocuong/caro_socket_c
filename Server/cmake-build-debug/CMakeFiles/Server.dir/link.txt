@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Server.dir/src/caroGame.c.o CMakeFiles/Server.dir/src/handleDatabase.c.o CMakeFiles/Server.dir/src/handleList.c.o CMakeFiles/Server.dir/src/handleServer.c.o CMakeFiles/Server.dir/src/initServer.c.o CMakeFiles/Server.dir/src/serverHeper.c.o CMakeFiles/Server.dir/src/structData.c.o CMakeFiles/Server.dir/main.c.o  -o Server  -pthread 
