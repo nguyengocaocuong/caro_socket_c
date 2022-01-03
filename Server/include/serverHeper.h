@@ -9,6 +9,10 @@ char *makeSendDataOnlineAccount(ServerData *serverData, int sockId);
 
 char *makeSendDataAcceptPlay(char *account);
 
+char *makeSendDataWinGame(int *winIndex[]);
+
+char *makeSendDataLostGame(int *winIndex[]);
+
 void separationDataRegister(char *recvRegister, DataAccount *account);
 
 char *separationDataNewGame(char *recvNewGame);

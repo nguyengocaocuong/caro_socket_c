@@ -5,9 +5,9 @@ CMakeFiles/Client.dir/exchange/src/clientHeper.c.o
  ../exchange/constant/constant.h
  ../exchange/include/clientHeper.h
  ../exchange/include/structData.h
- /home/ubuntu/Desktop/Client/exchange/src/clientHeper.c
+ /home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.c
 CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o
- /home/ubuntu/Desktop/Client/exchange/src/communicateWithServer.c
+ /home/ubuntu/Desktop/Caro/Client/exchange/src/communicateWithServer.c
 CMakeFiles/Client.dir/exchange/src/handleClient.c.o
  ../exchange/constant/constant.h
  ../exchange/include/clientHeper.h
@@ -16,7 +16,7 @@ CMakeFiles/Client.dir/exchange/src/handleClient.c.o
  ../views/include/handleLogicGameScreen.h
  ../views/include/handleLogicMainScreen.h
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/exchange/src/handleClient.c
+ /home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -658,7 +658,7 @@ CMakeFiles/Client.dir/exchange/src/initClient.c.o
  ../exchange/constant/clientError.h
  ../exchange/include/initClient.h
  ../views/include/applicationScreen.h
- /home/ubuntu/Desktop/Client/exchange/src/initClient.c
+ /home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -1310,7 +1310,7 @@ CMakeFiles/Client.dir/main.c.o
  ../views/include/handleLogicRegisterScreen.h
  ../views/include/initScreen.h
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/main.c
+ /home/ubuntu/Desktop/Caro/Client/main.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -1949,14 +1949,14 @@ CMakeFiles/Client.dir/main.c.o
  /usr/include/pango-1.0/pango/pangocairo.h
  /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h
 CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o
- /home/ubuntu/Desktop/Client/views/src/handleLogicAppScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicAppScreen.c
 CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o
  ../exchange/constant/constant.h
  ../exchange/include/handleClient.h
  ../exchange/include/structData.h
  ../views/include/applicationScreen.h
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/views/src/handleLogicGameScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -2598,7 +2598,7 @@ CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o
  ../exchange/constant/constant.h
  ../views/include/applicationScreen.h
  ../views/include/handleLogicHomeScreen.h
- /home/ubuntu/Desktop/Client/views/src/handleLogicHomeScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicHomeScreen.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -3246,7 +3246,7 @@ CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o
  ../views/include/handleLogicGameScreen.h
  ../views/include/handleLogicLoginScreen.h
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/views/src/handleLogicLoginScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicLoginScreen.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -3891,7 +3891,7 @@ CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.o
  ../views/include/applicationScreen.h
  ../views/include/handleLogicMainScreen.h
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/views/src/handleLogicMainScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -4536,7 +4536,7 @@ CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.o
  ../views/include/applicationScreen.h
  ../views/include/handleLogicRegisterScreen.h
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/views/src/handleLogicRegisterScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -5186,7 +5186,7 @@ CMakeFiles/Client.dir/views/src/initScreen.c.o
  ../views/include/handleLogicRegisterScreen.h
  ../views/include/initScreen.h
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/views/src/initScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/initScreen.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -5826,7 +5826,7 @@ CMakeFiles/Client.dir/views/src/initScreen.c.o
  /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h
 CMakeFiles/Client.dir/views/src/styleScreen.c.o
  ../views/include/styleScreen.h
- /home/ubuntu/Desktop/Client/views/src/styleScreen.c
+ /home/ubuntu/Desktop/Caro/Client/views/src/styleScreen.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h

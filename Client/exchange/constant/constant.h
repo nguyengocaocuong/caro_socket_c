@@ -9,6 +9,7 @@
 
 #define NEXT_YOU 1
 #define NEXT_NOT_YOU 2
+#define END_GAME 3
 
 #define MAX_LEN_BUFF 1024
 
@@ -27,5 +28,7 @@
 #define PREFIX_ACCEPT_PLAY "$ACCEPT_PLAY"
 #define PREFIX_CLOSE "$CLOSE"
 #define PREFIX_PLAY "$PLAY"
+#define PREFIX_WIN "$WIN"
+#define PREFIX_LOST "$LOST"
 #endif
 

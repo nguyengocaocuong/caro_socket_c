@@ -63,10 +63,10 @@ RM = /home/ubuntu/Downloads/clion-2020.1.2/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/Client
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/Caro/Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/Client/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/Caro/Client/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Client.dir/depend.make
@@ -79,172 +79,172 @@ include CMakeFiles/Client.dir/flags.make
 
 CMakeFiles/Client.dir/main.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Client.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/main.c.o   -c /home/ubuntu/Desktop/Client/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Client.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/main.c.o   -c /home/ubuntu/Desktop/Caro/Client/main.c
 
 CMakeFiles/Client.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/main.c > CMakeFiles/Client.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/main.c > CMakeFiles/Client.dir/main.c.i
 
 CMakeFiles/Client.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/main.c -o CMakeFiles/Client.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/main.c -o CMakeFiles/Client.dir/main.c.s
 
 CMakeFiles/Client.dir/exchange/src/clientHeper.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/exchange/src/clientHeper.c.o: ../exchange/src/clientHeper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Client.dir/exchange/src/clientHeper.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/clientHeper.c.o   -c /home/ubuntu/Desktop/Client/exchange/src/clientHeper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Client.dir/exchange/src/clientHeper.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/clientHeper.c.o   -c /home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.c
 
 CMakeFiles/Client.dir/exchange/src/clientHeper.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/exchange/src/clientHeper.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/exchange/src/clientHeper.c > CMakeFiles/Client.dir/exchange/src/clientHeper.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.c > CMakeFiles/Client.dir/exchange/src/clientHeper.c.i
 
 CMakeFiles/Client.dir/exchange/src/clientHeper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/exchange/src/clientHeper.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/exchange/src/clientHeper.c -o CMakeFiles/Client.dir/exchange/src/clientHeper.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.c -o CMakeFiles/Client.dir/exchange/src/clientHeper.c.s
 
 CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o: ../exchange/src/communicateWithServer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o   -c /home/ubuntu/Desktop/Client/exchange/src/communicateWithServer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o   -c /home/ubuntu/Desktop/Caro/Client/exchange/src/communicateWithServer.c
 
 CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/exchange/src/communicateWithServer.c > CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/exchange/src/communicateWithServer.c > CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.i
 
 CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/exchange/src/communicateWithServer.c -o CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/exchange/src/communicateWithServer.c -o CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.s
 
 CMakeFiles/Client.dir/exchange/src/handleClient.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/exchange/src/handleClient.c.o: ../exchange/src/handleClient.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Client.dir/exchange/src/handleClient.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/handleClient.c.o   -c /home/ubuntu/Desktop/Client/exchange/src/handleClient.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Client.dir/exchange/src/handleClient.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/handleClient.c.o   -c /home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c
 
 CMakeFiles/Client.dir/exchange/src/handleClient.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/exchange/src/handleClient.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/exchange/src/handleClient.c > CMakeFiles/Client.dir/exchange/src/handleClient.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c > CMakeFiles/Client.dir/exchange/src/handleClient.c.i
 
 CMakeFiles/Client.dir/exchange/src/handleClient.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/exchange/src/handleClient.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/exchange/src/handleClient.c -o CMakeFiles/Client.dir/exchange/src/handleClient.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c -o CMakeFiles/Client.dir/exchange/src/handleClient.c.s
 
 CMakeFiles/Client.dir/exchange/src/initClient.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/exchange/src/initClient.c.o: ../exchange/src/initClient.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Client.dir/exchange/src/initClient.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/initClient.c.o   -c /home/ubuntu/Desktop/Client/exchange/src/initClient.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Client.dir/exchange/src/initClient.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/exchange/src/initClient.c.o   -c /home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c
 
 CMakeFiles/Client.dir/exchange/src/initClient.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/exchange/src/initClient.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/exchange/src/initClient.c > CMakeFiles/Client.dir/exchange/src/initClient.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c > CMakeFiles/Client.dir/exchange/src/initClient.c.i
 
 CMakeFiles/Client.dir/exchange/src/initClient.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/exchange/src/initClient.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/exchange/src/initClient.c -o CMakeFiles/Client.dir/exchange/src/initClient.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c -o CMakeFiles/Client.dir/exchange/src/initClient.c.s
 
 CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o: ../views/src/handleLogicAppScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/handleLogicAppScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicAppScreen.c
 
 CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/handleLogicAppScreen.c > CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicAppScreen.c > CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.i
 
 CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/handleLogicAppScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicAppScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.s
 
 CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o: ../views/src/handleLogicGameScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/handleLogicGameScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c
 
 CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/handleLogicGameScreen.c > CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c > CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.i
 
 CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/handleLogicGameScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.s
 
 CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o: ../views/src/handleLogicHomeScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/handleLogicHomeScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicHomeScreen.c
 
 CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/handleLogicHomeScreen.c > CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicHomeScreen.c > CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.i
 
 CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/handleLogicHomeScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicHomeScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.s
 
 CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o: ../views/src/handleLogicLoginScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/handleLogicLoginScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicLoginScreen.c
 
 CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/handleLogicLoginScreen.c > CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicLoginScreen.c > CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.i
 
 CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/handleLogicLoginScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicLoginScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.s
 
 CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.o: ../views/src/handleLogicMainScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/handleLogicMainScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.c
 
 CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/handleLogicMainScreen.c > CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.c > CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.i
 
 CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/handleLogicMainScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicMainScreen.c.s
 
 CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.o: ../views/src/handleLogicRegisterScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/handleLogicRegisterScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.c
 
 CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/handleLogicRegisterScreen.c > CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.c > CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.i
 
 CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/handleLogicRegisterScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.c -o CMakeFiles/Client.dir/views/src/handleLogicRegisterScreen.c.s
 
 CMakeFiles/Client.dir/views/src/initScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/initScreen.c.o: ../views/src/initScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Client.dir/views/src/initScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/initScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/initScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Client.dir/views/src/initScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/initScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/initScreen.c
 
 CMakeFiles/Client.dir/views/src/initScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/initScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/initScreen.c > CMakeFiles/Client.dir/views/src/initScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/initScreen.c > CMakeFiles/Client.dir/views/src/initScreen.c.i
 
 CMakeFiles/Client.dir/views/src/initScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/initScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/initScreen.c -o CMakeFiles/Client.dir/views/src/initScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/initScreen.c -o CMakeFiles/Client.dir/views/src/initScreen.c.s
 
 CMakeFiles/Client.dir/views/src/styleScreen.c.o: CMakeFiles/Client.dir/flags.make
 CMakeFiles/Client.dir/views/src/styleScreen.c.o: ../views/src/styleScreen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Client.dir/views/src/styleScreen.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/styleScreen.c.o   -c /home/ubuntu/Desktop/Client/views/src/styleScreen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Client.dir/views/src/styleScreen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Client.dir/views/src/styleScreen.c.o   -c /home/ubuntu/Desktop/Caro/Client/views/src/styleScreen.c
 
 CMakeFiles/Client.dir/views/src/styleScreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Client.dir/views/src/styleScreen.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Client/views/src/styleScreen.c > CMakeFiles/Client.dir/views/src/styleScreen.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Client/views/src/styleScreen.c > CMakeFiles/Client.dir/views/src/styleScreen.c.i
 
 CMakeFiles/Client.dir/views/src/styleScreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Client.dir/views/src/styleScreen.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Client/views/src/styleScreen.c -o CMakeFiles/Client.dir/views/src/styleScreen.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Client/views/src/styleScreen.c -o CMakeFiles/Client.dir/views/src/styleScreen.c.s
 
 # Object files for target Client
 Client_OBJECTS = \
@@ -280,7 +280,7 @@ Client: CMakeFiles/Client.dir/views/src/initScreen.c.o
 Client: CMakeFiles/Client.dir/views/src/styleScreen.c.o
 Client: CMakeFiles/Client.dir/build.make
 Client: CMakeFiles/Client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable Client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable Client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -293,6 +293,6 @@ CMakeFiles/Client.dir/clean:
 .PHONY : CMakeFiles/Client.dir/clean
 
 CMakeFiles/Client.dir/depend:
-	cd /home/ubuntu/Desktop/Client/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/Client /home/ubuntu/Desktop/Client /home/ubuntu/Desktop/Client/cmake-build-debug /home/ubuntu/Desktop/Client/cmake-build-debug /home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles/Client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/Desktop/Caro/Client/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/Caro/Client /home/ubuntu/Desktop/Caro/Client /home/ubuntu/Desktop/Caro/Client/cmake-build-debug /home/ubuntu/Desktop/Caro/Client/cmake-build-debug /home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/Client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Client.dir/depend
 

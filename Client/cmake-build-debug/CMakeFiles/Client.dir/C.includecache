@@ -90,7 +90,7 @@ handleLogicMainScreen.h
 gtk/gtk.h
 -
 
-/home/ubuntu/Desktop/Client/exchange/src/clientHeper.c
+/home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.c
 stdlib.h
 -
 string.h
@@ -98,13 +98,13 @@ string.h
 stdio.h
 -
 constant.h
-/home/ubuntu/Desktop/Client/exchange/src/constant.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/constant.h
 clientHeper.h
-/home/ubuntu/Desktop/Client/exchange/src/clientHeper.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.h
 
-/home/ubuntu/Desktop/Client/exchange/src/communicateWithServer.c
+/home/ubuntu/Desktop/Caro/Client/exchange/src/communicateWithServer.c
 
-/home/ubuntu/Desktop/Client/exchange/src/handleClient.c
+/home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c
 stdlib.h
 -
 stdio.h
@@ -114,79 +114,79 @@ sys/socket.h
 string.h
 -
 clientHeper.h
-/home/ubuntu/Desktop/Client/exchange/src/clientHeper.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.h
 constant.h
-/home/ubuntu/Desktop/Client/exchange/src/constant.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/constant.h
 handleLogicGameScreen.h
-/home/ubuntu/Desktop/Client/exchange/src/handleLogicGameScreen.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/handleLogicGameScreen.h
 handleLogicMainScreen.h
-/home/ubuntu/Desktop/Client/exchange/src/handleLogicMainScreen.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/handleLogicMainScreen.h
 styleScreen.h
-/home/ubuntu/Desktop/Client/exchange/src/styleScreen.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/styleScreen.h
 
-/home/ubuntu/Desktop/Client/exchange/src/initClient.c
+/home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c
 arpa/inet.h
 -
 stdlib.h
 -
 initClient.h
-/home/ubuntu/Desktop/Client/exchange/src/initClient.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.h
 clientError.h
-/home/ubuntu/Desktop/Client/exchange/src/clientError.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/clientError.h
 
-/home/ubuntu/Desktop/Client/main.c
+/home/ubuntu/Desktop/Caro/Client/main.c
 initScreen.h
-/home/ubuntu/Desktop/Client/initScreen.h
+/home/ubuntu/Desktop/Caro/Client/initScreen.h
 initClient.h
-/home/ubuntu/Desktop/Client/initClient.h
+/home/ubuntu/Desktop/Caro/Client/initClient.h
 clientError.h
-/home/ubuntu/Desktop/Client/clientError.h
+/home/ubuntu/Desktop/Caro/Client/clientError.h
 
-/home/ubuntu/Desktop/Client/views/src/handleLogicAppScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicAppScreen.c
 
-/home/ubuntu/Desktop/Client/views/src/handleLogicGameScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c
 handleClient.h
-/home/ubuntu/Desktop/Client/views/src/handleClient.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleClient.h
 
-/home/ubuntu/Desktop/Client/views/src/handleLogicHomeScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicHomeScreen.c
 handleLogicHomeScreen.h
-/home/ubuntu/Desktop/Client/views/src/handleLogicHomeScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicHomeScreen.h
 constant.h
-/home/ubuntu/Desktop/Client/views/src/constant.h
+/home/ubuntu/Desktop/Caro/Client/views/src/constant.h
 
-/home/ubuntu/Desktop/Client/views/src/handleLogicLoginScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicLoginScreen.c
 handleLogicLoginScreen.h
-/home/ubuntu/Desktop/Client/views/src/handleLogicLoginScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicLoginScreen.h
 handleThread.h
-/home/ubuntu/Desktop/Client/views/src/handleThread.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleThread.h
 
-/home/ubuntu/Desktop/Client/views/src/handleLogicMainScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.c
 styleScreen.h
 -
 gtk/gtk.h
 -
 constant.h
-/home/ubuntu/Desktop/Client/views/src/constant.h
+/home/ubuntu/Desktop/Caro/Client/views/src/constant.h
 handleLogicMainScreen.h
-/home/ubuntu/Desktop/Client/views/src/handleLogicMainScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.h
 handleClient.h
-/home/ubuntu/Desktop/Client/views/src/handleClient.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleClient.h
 
-/home/ubuntu/Desktop/Client/views/src/handleLogicRegisterScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.c
 handleLogicRegisterScreen.h
-/home/ubuntu/Desktop/Client/views/src/handleLogicRegisterScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.h
 handleClient.h
-/home/ubuntu/Desktop/Client/views/src/handleClient.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleClient.h
 
-/home/ubuntu/Desktop/Client/views/src/initScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/initScreen.c
 initScreen.h
-/home/ubuntu/Desktop/Client/views/src/initScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/initScreen.h
 styleScreen.h
-/home/ubuntu/Desktop/Client/views/src/styleScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/styleScreen.h
 
-/home/ubuntu/Desktop/Client/views/src/styleScreen.c
+/home/ubuntu/Desktop/Caro/Client/views/src/styleScreen.c
 styleScreen.h
-/home/ubuntu/Desktop/Client/views/src/styleScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/styleScreen.h
 
 /usr/include/atk-1.0/atk/atk-enum-types.h
 atk/atkversion.h

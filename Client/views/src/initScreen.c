@@ -267,5 +267,4 @@ void initApplication(UserData *userData) {
     initLoginScreen(userData);
     initRegisterScreen(userData);
     initGameScreen(userData);
-
 }

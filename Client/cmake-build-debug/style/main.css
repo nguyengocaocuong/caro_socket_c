@@ -1,0 +1,136 @@
+window {
+    background-color: #c3e2e2;
+
+}
+
+.fixed-menu {
+    background-color: darkslateblue;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.button {
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}
+
+.button:hover {
+    background-image: none;
+    background-color: transparent;
+    border-bottom: 2px solid #7bd6c0;
+    color: red;
+}
+
+.active {
+    color: #fd9a9a;
+    border-bottom: 2px solid #43a05d;
+}
+
+.active1 {
+    color: #ff0000;
+}
+
+.btn-history {
+
+}
+
+.btn-new-game {
+
+}
+
+.btn-online {
+
+}
+
+.stack-main {
+    background-color: #727299;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.btn-home {
+    background-image: none;
+    background-color: #27204f;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 20px;
+    color: #d0bbbb;
+    border: none;
+}
+
+.scroll {
+    border: none;
+}
+
+.history {
+    background-color: #0087f1;
+}
+.entry-account{
+    border-radius: 25px;
+    color: #ffffff;
+    font-family: monospace;
+}
+
+.btn-request {background-image: linear-gradient(to right, #780206 0%, #061161  51%, #780206  100%)}
+.btn-request {
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 15px;
+}
+
+.btn-request:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+.text-history {
+    color: #191d01;
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 15px;
+}
+.btn-add{
+    background-image: none;
+    border:none;
+    background-color: transparent;
+    color: #9d5050;
+}
+.btn-add:hover{
+    color: #ff0000;
+}
+.btn-start {background-image: linear-gradient(to right, #004FF9 0%, #FFF94C  51%, #004FF9  100%)}
+.btn-start {
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+.btn-start:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+}
+
+
+.lbel-history {
+    background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%)
+}
+
+.lbel-history {
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}

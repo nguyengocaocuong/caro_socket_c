@@ -6,5 +6,5 @@ C_FLAGS = -g   -pthread -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/ubuntu/Desktop/Server/constant -I/home/ubuntu/Desktop/Server/include 
+C_INCLUDES = -I/home/ubuntu/Desktop/Caro/Server/constant -I/home/ubuntu/Desktop/Caro/Server/include 
 

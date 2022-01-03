@@ -4,3 +4,5 @@ ha huy cuong#password3
 le dinh tan#password4
 le bao hieu#password5
 do viet hoang#password6
+dang van manh#password6
+vo hong son#password7

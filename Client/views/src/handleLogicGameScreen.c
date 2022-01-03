@@ -71,7 +71,7 @@ void on_clicked_game_redo(GtkButton *button, UserData *userData) {
 }
 
 void on_clicked_cell(GtkButton *button, UserData *userData) {
-    if (userData->isNext == NEXT_NOT_YOU) return;
+    if (userData->isNext == NEXT_NOT_YOU || userData->isNext == END_GAME) return;
     userData->isNext = NEXT_NOT_YOU;
     change_label_next_person(userData);
     remove_class(GTK_WIDGET(button), "no-chose");
@@ -87,8 +87,23 @@ void on_clicked_set_cell(int row, int col, UserData *userData) {
     userData->isNext = NEXT_YOU;
     change_label_next_person(userData);
     remove_class(button, "no-chose");
+    printf("Ho chon : %s\n",userData->icon == X_ICON ? "o-chose" : "x-chose");
     add_class(GTK_WIDGET(button), userData->icon == X_ICON ? "o-chose" : "x-chose");
     gtk_widget_set_can_focus(GTK_WIDGET(button), FALSE);
+}
+
+void set_win_cell(int row, int col, UserData *userData,int tag){
+    GtkWidget *button = gtk_grid_get_child_at(GTK_GRID(userData->gameApplication->gameContainer.grid_caro), row, col);
+    userData->isNext = NEXT_YOU;
+    change_label_next_person(userData);
+    if(tag == 2) {
+        remove_class(button, userData->icon == X_ICON ? "x-chose" : "o-chose");
+        add_class(button, userData->icon == X_ICON ? "x-win" : "o-win");
+    }
+    else{
+        remove_class(button, userData->icon == X_ICON ? "o-chose" : "x-chose");
+        add_class(button, userData->icon == X_ICON ? "o-win" : "x-win");
+    }
 }
 
 void show_dialog_time_out(UserData *userData) {
@@ -98,3 +113,8 @@ void show_dialog_time_out(UserData *userData) {
     gtk_window_set_transient_for(GTK_WINDOW(dialog), GTK_WINDOW(userData->gameApplication->gameContainer.window_game));
     gtk_widget_show(GTK_WIDGET(dialog));
 }
+
+void set_label_status_game(UserData *userData, char *status){
+    gtk_label_set_text(GTK_LABEL(userData->gameApplication->gameContainer.lbl_status_game),status);
+}
+

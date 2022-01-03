@@ -230,10 +230,37 @@ void handleRecvData(char *dataRecv, UserData *userData) {
         return;
     }
     if (strcmp(token, PREFIX_PLAY) == 0) {
+        printf("You play first\n");
         userData->icon = X_ICON;
         userData->isNext = NEXT_YOU;
         gtk_widget_set_visible(userData->gameApplication->mainContainer.start, TRUE);
         on_new_game_clicked(NULL, userData);
+        if (tmp != NULL)
+            free(tmp);
+        return;
+    }
+
+    if (strcmp(token, PREFIX_WIN) == 0) {
+        userData->isNext = END_GAME;
+        set_label_status_game(userData, "Bạn thắng");
+        set_win_cell(dataRecv[7] - '0',dataRecv[5]- '0', userData,2);
+        set_win_cell(dataRecv[11] - '0',dataRecv[9]- '0', userData,2);
+        set_win_cell(dataRecv[15] - '0',dataRecv[13]- '0', userData,2);
+        set_win_cell(dataRecv[19] - '0',dataRecv[17]- '0', userData,2);
+        set_win_cell(dataRecv[23] - '0',dataRecv[21]- '0', userData,2);
+        if (tmp != NULL)
+            free(tmp);
+        return;
+    }
+
+    if (strcmp(token, PREFIX_LOST) == 0) {
+        set_label_status_game(userData, "Bạn thua");
+        set_win_cell(dataRecv[8] - '0',dataRecv[6]- '0', userData,1);
+        set_win_cell(dataRecv[12] - '0',dataRecv[10]- '0', userData,1);
+        set_win_cell(dataRecv[16] - '0',dataRecv[14]- '0', userData,1);
+        set_win_cell(dataRecv[20] - '0',dataRecv[18]- '0', userData,1);
+        set_win_cell(dataRecv[24] - '0',dataRecv[22]- '0', userData,1);
+        userData->isNext = END_GAME;
         if (tmp != NULL)
             free(tmp);
         return;

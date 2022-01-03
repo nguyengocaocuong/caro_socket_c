@@ -47,9 +47,12 @@
 #define PREFIX_PLAY "$PLAY"
 #define PREFIX_FAIL_REQUEST_NEW_GAME "$FAIL_REQUEST_NEW_GAME"
 #define PREFIX_END_GAME "$END_GAME"
+#define PREFIX_WIN "$WIN"
+#define PREFIX_LOST "$LOST"
 
 #define GAME_STATUS_WIN 1
 #define GAME_STATUS_NEXT_CELL 2
+
 
 #define FILE_ACCOUNT "data/account.txt"
 #define FILE_HISTORY "data/history.txt"

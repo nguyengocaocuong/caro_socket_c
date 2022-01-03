@@ -6,8 +6,8 @@
 #include "constant.h"
 #include "handleList.h"
 
-void writeLog(const Client *client, char *sendData,char *tag){
-    printf("%5s%25s : %s\n",tag,client->dataClient->name,sendData);
+void writeLog(const Client *client, char *sendData, char *tag) {
+    printf("%5s%25s : %s\n", tag, client->dataClient->name, sendData);
 }
 
 char *makeSendDataNextGameStatus(int row, int col) {
@@ -55,9 +55,79 @@ char *makeSendDataOnlineAccount(ServerData *serverData, int sockId) {
 
 char *makeSendDataAcceptPlay(char *account) {
     char *sendData = (char *) calloc(1, MAX_LEN_BUFF);
-    strcat(sendData,PREFIX_ACCEPT_PLAY);
-    strcat(sendData,SEPARATOR);
-    strcat(sendData,account);
+    strcat(sendData, PREFIX_ACCEPT_PLAY);
+    strcat(sendData, SEPARATOR);
+    strcat(sendData, account);
+    return sendData;
+}
+
+char *makeSendDataWinGame(int *winIndex[]) {
+    char *sendData = (char *) calloc(1, MAX_LEN_BUFF);
+    strcat(sendData, PREFIX_WIN);
+    strcat(sendData, SEPARATOR);
+    sendData[5] = (char) (winIndex[0][0] + '0');
+    sendData[6] = '#';
+    sendData[7] = (char) (winIndex[0][1] + '0');
+
+    sendData[8] = '#';
+
+    sendData[9] = (char) (winIndex[1][0] + '0');
+    sendData[10] = '#';
+    sendData[11] = (char) (winIndex[1][1] + '0');
+
+    sendData[12] = '#';
+
+    sendData[13] = (char) (winIndex[2][0] + '0');
+    sendData[14] = '#';
+    sendData[15] = (char) (winIndex[2][1] + '0');
+
+    sendData[16] = '#';
+
+    sendData[17] = (char) (winIndex[3][0] + '0');
+    sendData[18] = '#';
+    sendData[19] = (char) (winIndex[3][1] + '0');
+
+    sendData[20] = '#';
+
+    sendData[21] = (char) (winIndex[4][0] + '0');
+    sendData[22] = '#';
+    sendData[23] = (char) (winIndex[4][1] + '0');
+    sendData[24] = 0;
+    return sendData;
+}
+
+char *makeSendDataLostGame(int *winIndex[]) {
+    char *sendData = (char *) calloc(1, MAX_LEN_BUFF);
+    strcat(sendData, PREFIX_LOST);
+    strcat(sendData, SEPARATOR);
+    sendData[6] = (char) (winIndex[0][0] + '0');
+    sendData[7] = '#';
+    sendData[8] = (char) (winIndex[0][1] + '0');
+
+    sendData[9] = '#';
+
+    sendData[10] = (char) (winIndex[1][0] + '0');
+    sendData[11] = '#';
+    sendData[12] = (char) (winIndex[1][1] + '0');
+
+    sendData[13] = '#';
+
+    sendData[14] = (char) (winIndex[2][0] + '0');
+    sendData[15] = '#';
+    sendData[16] = (char) (winIndex[2][1] + '0');
+
+    sendData[17] = '#';
+
+    sendData[18] = (char) (winIndex[3][0] + '0');
+    sendData[19] = '#';
+    sendData[20] = (char) (winIndex[3][1] + '0');
+
+    sendData[21] = '#';
+
+    sendData[22] = (char) (winIndex[4][0] + '0');
+    sendData[23] = '#';
+    sendData[24] = (char) (winIndex[4][1] + '0');
+    sendData[25] = 0;
     return sendData;
 }
 
@@ -93,10 +163,10 @@ char *separationDataAcceptPlay(char *recvAcceptPlay) {
     return account;
 }
 
-void separationDataRegister(char *recvRegister,DataAccount *account) {
-    char *token = strtok(recvRegister,SEPARATOR);
-    token= strtok(NULL,SEPARATOR);
-    strcpy(account->account,token);
+void separationDataRegister(char *recvRegister, DataAccount *account) {
+    char *token = strtok(recvRegister, SEPARATOR);
+    token = strtok(NULL, SEPARATOR);
+    strcpy(account->account, token);
     token = strtok(NULL, SEPARATOR);
     strcpy(account->password, token);
 }

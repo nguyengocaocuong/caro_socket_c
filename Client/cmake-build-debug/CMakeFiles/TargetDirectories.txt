@@ -1,4 +1,4 @@
-/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles/Client.dir
-/home/ubuntu/Desktop/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir
+/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/Client.dir
+/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir

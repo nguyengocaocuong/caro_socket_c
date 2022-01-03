@@ -56,10 +56,14 @@ void handleRecvData(int sockFd, ServerData *serverData) {
         strcat(data, account.account);
         strcat(data, SEPARATOR);
         strcat(data, account.password);
+
         // kiem tra tai khoan
         printf("%s\n", data);
         writeFileAccount(serverData, data);
         addList(serverData, createDataAccount(data), TAG_ACCOUNT);
+        Client *client = (Client *) getBySockID(serverData, sockFd, TAG_CLIENT);
+        strcpy(client->dataClient->name, account.account);
+        strcpy(client->dataClient->password, account.password);
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
         free(data);
         return;
@@ -116,6 +120,9 @@ void handleRecvData(int sockFd, ServerData *serverData) {
         client->dataClient->status = CLIENT_STATUS_NOT_ALREADY;
         requestClient->dataClient->status = CLIENT_STATUS_NOT_ALREADY;
         gameStatus.serverData = serverData;
+        for (int i = 0; i < 15; ++i)
+            for (int j = 0; j < 15; ++j)
+                gameStatus.gridGame[i][j] = 0;
         int ret;
 
 //    Set priority
@@ -187,7 +194,7 @@ void handleAcceptConnect(ServerData *serverData) {
     memset(&clientAddr, 0, sizeof clientAddr);
     cnnFd = accept(serverData->listenFD, (struct sockaddr *) &clientAddr, &sockAddrLen);
     DataClient *dataClient = createDataClient(cnnFd, clientAddr);
-    printf("%s : %d\n", getIpAddrFromSockAddr(clientAddr), getPortFromSockAddr(clientAddr));
+//    printf("%s : %d\n", getIpAddrFromSockAddr(clientAddr), getPortFromSockAddr(clientAddr));
     addList(serverData, dataClient, TAG_CLIENT);
 }
 
@@ -200,7 +207,7 @@ void handleSelect(ServerData *serverData) {
 }
 
 void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSockFd, int otherSockFd) {
-    printf("%s\n", recvData);
+//    printf("%s\n", recvData);
     char *tmp = (char *) calloc(1, MAX_LEN_BUFF);
     strcpy(tmp, recvData);
     char *token = strtok(tmp, SEPARATOR);
@@ -209,17 +216,34 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
         free(tmp);
         return;
     }
+    //a:sockA : X_ICON > b:sockB:O_ICON
     if (strcmp(token, PREFIX_CELL) == 0) {
         int row = recvData[6] - '0';
         int col = recvData[8] - '0';
-        gameStatus->gridGame[row][col] = 1;
-        if(gameStatus->isMachine = IS_MACHINE){
-
+        gameStatus->gridGame[col][row] = requestSockFd > otherSockFd ? X_ICON : O_ICON;
+        int *winIndex[5];
+        if (checkStatusGame(gameStatus, col, row, winIndex) == GAME_STATUS_WIN) {
+            char *sendWin = makeSendDataWinGame(winIndex);
+            char *sendLost = makeSendDataLostGame(winIndex);
+            send(otherSockFd, recvData, MAX_LEN_BUFF, 0);
+            send(requestSockFd, sendWin, MAX_LEN_BUFF, 0);
+            send(otherSockFd, sendLost, MAX_LEN_BUFF, 0);
+            printf("WIN : ");
+            for (int i = 0; i < 5; ++i) {
+                printf("[%d][%d] | ", winIndex[i][0], winIndex[i][1]);
+                free(winIndex[i]);
+            }
+            printf("\n");
+            printf("%s\n", sendWin);
+            printf("%s\n", sendLost);
+            free(tmp);
+            free(sendLost);
+            free(sendWin);
+            return;
         }
-        if (checkStatusGame(gameStatus, row, col) == GAME_STATUS_WIN) {
+        if (gameStatus->isMachine = IS_MACHINE) {
 
         } else {
-
         }
         send(otherSockFd, recvData, MAX_LEN_BUFF, 0);
         free(tmp);

@@ -63,10 +63,10 @@ RM = /home/ubuntu/Downloads/clion-2020.1.2/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/Server
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/Caro/Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/Server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/Caro/Server/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Server.dir/depend.make
@@ -79,107 +79,107 @@ include CMakeFiles/Server.dir/flags.make
 
 CMakeFiles/Server.dir/src/caroGame.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/src/caroGame.c.o: ../src/caroGame.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Server.dir/src/caroGame.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/caroGame.c.o   -c /home/ubuntu/Desktop/Server/src/caroGame.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Server.dir/src/caroGame.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/caroGame.c.o   -c /home/ubuntu/Desktop/Caro/Server/src/caroGame.c
 
 CMakeFiles/Server.dir/src/caroGame.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/src/caroGame.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/src/caroGame.c > CMakeFiles/Server.dir/src/caroGame.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/src/caroGame.c > CMakeFiles/Server.dir/src/caroGame.c.i
 
 CMakeFiles/Server.dir/src/caroGame.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/src/caroGame.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/src/caroGame.c -o CMakeFiles/Server.dir/src/caroGame.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/src/caroGame.c -o CMakeFiles/Server.dir/src/caroGame.c.s
 
 CMakeFiles/Server.dir/src/handleDatabase.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/src/handleDatabase.c.o: ../src/handleDatabase.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Server.dir/src/handleDatabase.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/handleDatabase.c.o   -c /home/ubuntu/Desktop/Server/src/handleDatabase.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Server.dir/src/handleDatabase.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/handleDatabase.c.o   -c /home/ubuntu/Desktop/Caro/Server/src/handleDatabase.c
 
 CMakeFiles/Server.dir/src/handleDatabase.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/src/handleDatabase.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/src/handleDatabase.c > CMakeFiles/Server.dir/src/handleDatabase.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/src/handleDatabase.c > CMakeFiles/Server.dir/src/handleDatabase.c.i
 
 CMakeFiles/Server.dir/src/handleDatabase.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/src/handleDatabase.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/src/handleDatabase.c -o CMakeFiles/Server.dir/src/handleDatabase.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/src/handleDatabase.c -o CMakeFiles/Server.dir/src/handleDatabase.c.s
 
 CMakeFiles/Server.dir/src/handleList.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/src/handleList.c.o: ../src/handleList.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Server.dir/src/handleList.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/handleList.c.o   -c /home/ubuntu/Desktop/Server/src/handleList.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Server.dir/src/handleList.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/handleList.c.o   -c /home/ubuntu/Desktop/Caro/Server/src/handleList.c
 
 CMakeFiles/Server.dir/src/handleList.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/src/handleList.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/src/handleList.c > CMakeFiles/Server.dir/src/handleList.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/src/handleList.c > CMakeFiles/Server.dir/src/handleList.c.i
 
 CMakeFiles/Server.dir/src/handleList.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/src/handleList.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/src/handleList.c -o CMakeFiles/Server.dir/src/handleList.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/src/handleList.c -o CMakeFiles/Server.dir/src/handleList.c.s
 
 CMakeFiles/Server.dir/src/handleServer.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/src/handleServer.c.o: ../src/handleServer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Server.dir/src/handleServer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/handleServer.c.o   -c /home/ubuntu/Desktop/Server/src/handleServer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Server.dir/src/handleServer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/handleServer.c.o   -c /home/ubuntu/Desktop/Caro/Server/src/handleServer.c
 
 CMakeFiles/Server.dir/src/handleServer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/src/handleServer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/src/handleServer.c > CMakeFiles/Server.dir/src/handleServer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/src/handleServer.c > CMakeFiles/Server.dir/src/handleServer.c.i
 
 CMakeFiles/Server.dir/src/handleServer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/src/handleServer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/src/handleServer.c -o CMakeFiles/Server.dir/src/handleServer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/src/handleServer.c -o CMakeFiles/Server.dir/src/handleServer.c.s
 
 CMakeFiles/Server.dir/src/initServer.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/src/initServer.c.o: ../src/initServer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Server.dir/src/initServer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/initServer.c.o   -c /home/ubuntu/Desktop/Server/src/initServer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Server.dir/src/initServer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/initServer.c.o   -c /home/ubuntu/Desktop/Caro/Server/src/initServer.c
 
 CMakeFiles/Server.dir/src/initServer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/src/initServer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/src/initServer.c > CMakeFiles/Server.dir/src/initServer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/src/initServer.c > CMakeFiles/Server.dir/src/initServer.c.i
 
 CMakeFiles/Server.dir/src/initServer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/src/initServer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/src/initServer.c -o CMakeFiles/Server.dir/src/initServer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/src/initServer.c -o CMakeFiles/Server.dir/src/initServer.c.s
 
 CMakeFiles/Server.dir/src/serverHeper.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/src/serverHeper.c.o: ../src/serverHeper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Server.dir/src/serverHeper.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/serverHeper.c.o   -c /home/ubuntu/Desktop/Server/src/serverHeper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Server.dir/src/serverHeper.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/serverHeper.c.o   -c /home/ubuntu/Desktop/Caro/Server/src/serverHeper.c
 
 CMakeFiles/Server.dir/src/serverHeper.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/src/serverHeper.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/src/serverHeper.c > CMakeFiles/Server.dir/src/serverHeper.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/src/serverHeper.c > CMakeFiles/Server.dir/src/serverHeper.c.i
 
 CMakeFiles/Server.dir/src/serverHeper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/src/serverHeper.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/src/serverHeper.c -o CMakeFiles/Server.dir/src/serverHeper.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/src/serverHeper.c -o CMakeFiles/Server.dir/src/serverHeper.c.s
 
 CMakeFiles/Server.dir/src/structData.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/src/structData.c.o: ../src/structData.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Server.dir/src/structData.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/structData.c.o   -c /home/ubuntu/Desktop/Server/src/structData.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Server.dir/src/structData.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/src/structData.c.o   -c /home/ubuntu/Desktop/Caro/Server/src/structData.c
 
 CMakeFiles/Server.dir/src/structData.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/src/structData.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/src/structData.c > CMakeFiles/Server.dir/src/structData.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/src/structData.c > CMakeFiles/Server.dir/src/structData.c.i
 
 CMakeFiles/Server.dir/src/structData.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/src/structData.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/src/structData.c -o CMakeFiles/Server.dir/src/structData.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/src/structData.c -o CMakeFiles/Server.dir/src/structData.c.s
 
 CMakeFiles/Server.dir/main.c.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Server.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/main.c.o   -c /home/ubuntu/Desktop/Server/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Server.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Server.dir/main.c.o   -c /home/ubuntu/Desktop/Caro/Server/main.c
 
 CMakeFiles/Server.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Server.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Server/main.c > CMakeFiles/Server.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/Caro/Server/main.c > CMakeFiles/Server.dir/main.c.i
 
 CMakeFiles/Server.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Server.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Server/main.c -o CMakeFiles/Server.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/Caro/Server/main.c -o CMakeFiles/Server.dir/main.c.s
 
 # Object files for target Server
 Server_OBJECTS = \
@@ -205,7 +205,7 @@ Server: CMakeFiles/Server.dir/src/structData.c.o
 Server: CMakeFiles/Server.dir/main.c.o
 Server: CMakeFiles/Server.dir/build.make
 Server: CMakeFiles/Server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable Server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable Server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -218,6 +218,6 @@ CMakeFiles/Server.dir/clean:
 .PHONY : CMakeFiles/Server.dir/clean
 
 CMakeFiles/Server.dir/depend:
-	cd /home/ubuntu/Desktop/Server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/Server /home/ubuntu/Desktop/Server /home/ubuntu/Desktop/Server/cmake-build-debug /home/ubuntu/Desktop/Server/cmake-build-debug /home/ubuntu/Desktop/Server/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/Desktop/Caro/Server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/Caro/Server /home/ubuntu/Desktop/Caro/Server /home/ubuntu/Desktop/Caro/Server/cmake-build-debug /home/ubuntu/Desktop/Caro/Server/cmake-build-debug /home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Server.dir/depend
 

@@ -102,22 +102,22 @@ void removeBySocketID(ServerData *serverData, int sockID, int tag) {
     preTmp = (Client *) serverData->client;
     while (tmp != NULL) {
         if (((Client *) tmp)->dataClient->sockFd == sockID) {
-            if ((Client *) tmp == preTmp) {
+            if ((Client *) tmp == (Client *) preTmp) {
                 preTmp = ((Client *) preTmp)->nextClient;
+                serverData->client = preTmp;
                 free(((Client *) tmp)->dataClient);
                 free(tmp);
                 break;
             } else {
                 ((Client *) preTmp)->nextClient = ((Client *) tmp)->nextClient;
                 free(((Client *) tmp)->dataClient);
-                free(tmp);
+                free((Client*)tmp);
                 break;
             }
         }
         preTmp = tmp;
         tmp = ((Client *) tmp)->nextClient;
     }
-    serverData->client = preTmp;
 }
 
 void *getBySockID(ServerData *serverData, int sockId, int tag) {
@@ -137,7 +137,7 @@ void *getBySockName(ServerData *serverData, char *account, int tag) {
     if (serverData->client == NULL) return NULL;
     Client *tmp = serverData->client;
     while (tmp != NULL) {
-        if (strcmp(tmp->dataClient->name,account) == 0)
+        if (strcmp(tmp->dataClient->name, account) == 0)
             return tmp;
         tmp = tmp->nextClient;
     }

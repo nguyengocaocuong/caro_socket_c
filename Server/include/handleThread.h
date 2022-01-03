@@ -75,21 +75,25 @@ static void *multiModeHandleNewGame(void *argv) {
                 recvData[recvSize] = 0;
                 if (recvData > 0) {
                     printf("Client1 : %s\n", recvData);
-                    send(sock2, recvData, MAX_LEN_BUFF, 0);
-                }
-
-//                char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
-//                strcpy(dataRecv, recvData);
+//                    send(sock2, recvData, MAX_LEN_BUFF, 0);
+                char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
+                strcpy(dataRecv, recvData);
 //                send(sock2,recvData,MAX_LEN_BUFF,0);
-//                handleRecvDataNewGame(dataRecv, sock1,sock2);
-//                free(dataRecv);
+                handleRecvDataNewGame(gameStatus,dataRecv, sock1,sock2);
+                free(dataRecv);
+                }
             }
             if (FD_ISSET(sock2, &readFds)) {
                 recvSize = recv(sock2, recvData, MAX_LEN_BUFF, 0);
                 recvData[recvSize] = 0;
                 if (recvData > 0) {
                     printf("Client2 : %s\n", recvData);
-                    send(sock1, recvData, MAX_LEN_BUFF, 0);
+//                    send(sock1, recvData, MAX_LEN_BUFF, 0);
+                    char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
+                    strcpy(dataRecv, recvData);
+//                    send(sock2,recvData,MAX_LEN_BUFF,0);
+                    handleRecvDataNewGame(gameStatus,dataRecv, sock2,sock1);
+                    free(dataRecv);
                 }
             }
         }
