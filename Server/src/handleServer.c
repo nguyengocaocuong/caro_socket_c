@@ -125,7 +125,6 @@ void handleRecvData(int sockFd, ServerData *serverData) {
                 gameStatus.gridGame[i][j] = 0;
         int ret;
 
-//    Set priority
         struct sched_param schedParam;
         pthread_attr_t attr;
         pthread_attr_init(&attr);
@@ -147,22 +146,7 @@ void handleRecvData(int sockFd, ServerData *serverData) {
         free(tmp);
         return;
     }
-    if (strcmp(token, PREFIX_CELL) == 0) {
-
-        free(tmp);
-        return;
-    }
-    if (strcmp(token, PREFIX_CLOSE) == 0) {
-
-        free(tmp);
-        return;
-    }
     if (strcmp(token, PREFIX_ADD_FRIEND) == 0) {
-        free(tmp);
-        return;
-    }
-    if (strcmp(token, PREFIX_MESSAGE) == 0) {
-        send(sockFd, "$MESSAGE#hi ban! ban la ai", MAX_LEN_BUFF, 0);
         free(tmp);
         return;
     }
@@ -175,14 +159,12 @@ void updateNewReadFds(ServerData *serverData) {
     FD_SET(serverData->listenFD, &(serverData->readFds));
     Client *tmp = serverData->client;
     while (tmp != NULL) {
-        if (tmp->dataClient->status == CLIENT_STATUS_NOT_ALREADY) {
+        if (tmp->dataClient->status == CLIENT_STATUS_ON) {
+            tmpSockFd = tmp->dataClient->sockFd;
+            FD_SET(tmpSockFd, &(serverData->readFds));
+            maxFd = maxFd > tmpSockFd ? maxFd : tmpSockFd;
             tmp = tmp->nextClient;
-            continue;
         }
-        tmpSockFd = tmp->dataClient->sockFd;
-        FD_SET(tmpSockFd, &(serverData->readFds));
-        maxFd = maxFd > tmpSockFd ? maxFd : tmpSockFd;
-        tmp = tmp->nextClient;
     }
     serverData->maxFd = maxFd + 1;
 }
@@ -194,7 +176,6 @@ void handleAcceptConnect(ServerData *serverData) {
     memset(&clientAddr, 0, sizeof clientAddr);
     cnnFd = accept(serverData->listenFD, (struct sockaddr *) &clientAddr, &sockAddrLen);
     DataClient *dataClient = createDataClient(cnnFd, clientAddr);
-//    printf("%s : %d\n", getIpAddrFromSockAddr(clientAddr), getPortFromSockAddr(clientAddr));
     addList(serverData, dataClient, TAG_CLIENT);
 }
 
@@ -207,7 +188,6 @@ void handleSelect(ServerData *serverData) {
 }
 
 void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSockFd, int otherSockFd) {
-//    printf("%s\n", recvData);
     char *tmp = (char *) calloc(1, MAX_LEN_BUFF);
     strcpy(tmp, recvData);
     char *token = strtok(tmp, SEPARATOR);
@@ -228,14 +208,24 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
             send(otherSockFd, recvData, MAX_LEN_BUFF, 0);
             send(requestSockFd, sendWin, MAX_LEN_BUFF, 0);
             send(otherSockFd, sendLost, MAX_LEN_BUFF, 0);
-            printf("WIN : ");
-            for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ", winIndex[i][0], winIndex[i][1]);
-                free(winIndex[i]);
-            }
+
+            Client *winClient = getBySockID(gameStatus->serverData, requestSockFd, TAG_CLIENT);
+            Client *lostClient = getBySockID(gameStatus->serverData, otherSockFd, TAG_CLIENT);
+            char *history = (char *) calloc(1, MAX_LEN_BUFF);
+            char *currentTime = getCurrentTime();
+            sprintf(history, "%s#%s#%s#%s", winClient->dataClient->name, lostClient->dataClient->name, "win",
+                    currentTime);
+            writeFileHistory(gameStatus->serverData, history);
+            free(history);
+            history = (char *) calloc(1, MAX_LEN_BUFF);
+            sprintf(history, "%s#%s#%s#%s", lostClient->dataClient->name, winClient->dataClient->name, "lost",
+                    currentTime);
+            writeFileHistory(gameStatus->serverData, history);
             printf("\n");
             printf("%s\n", sendWin);
             printf("%s\n", sendLost);
+            free(currentTime);
+            free(history);
             free(tmp);
             free(sendLost);
             free(sendWin);
@@ -254,6 +244,9 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
         pthread_exit(NULL);
     }
     if (strcmp(token, PREFIX_END_GAME) == 0) {
+        gameStatus->client[0]->dataClient->status = CLIENT_STATUS_ON;
+        gameStatus->client[1]->dataClient->status = CLIENT_STATUS_ON;
+//        printf("END");
         pthread_exit(NULL);
     }
 }

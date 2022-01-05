@@ -1,2 +1,6 @@
 nguyen ngo cao cuong#nguyen dinh canh#win#28-10-2000
-nguyen ngo cao cuong#ha huy cuong#win#24-10-2000
+nguyen dinh canh#nguyen ngo cao cuong#lost#28-10-2000
+nguyen ngo cao cuong#nguyen dinh canh#win#5-1-2022
+nguyen dinh canh#nguyen ngo cao cuong#lost#5-1-2022
+nguyen dinh canh#nguyen ngo cao cuong#win#5-1-2022
+nguyen ngo cao cuong#nguyen dinh canh#lost#5-1-2022

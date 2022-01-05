@@ -153,7 +153,7 @@ void initGameScreen(UserData *userData) {
     css_set(provider_game, (GtkWidget *) userData->gameApplication->gameContainer.scroll);
 
     g_signal_connect(userData->gameApplication->gameContainer.window_game, "destroy", G_CALLBACK(gtk_main_quit_game),
-                     NULL);
+                     userData);
     g_signal_connect(userData->gameApplication->gameContainer.btn_undo, "clicked", G_CALLBACK(on_clicked_game_undo),
                      userData);
     g_signal_connect(userData->gameApplication->gameContainer.btn_send, "clicked", G_CALLBACK(on_clicked_game_send),

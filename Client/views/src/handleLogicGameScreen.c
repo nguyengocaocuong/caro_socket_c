@@ -10,7 +10,9 @@ void change_label_next_person(UserData *userData) {
 void gtk_main_quit_game(GtkWindow *window, UserData *userData) {
     send(userData->sockFd, PREFIX_END_GAME, MAX_LEN_BUFF, 0);
     close(userData->sockFd);
-    gtk_main_quit();
+    gtk_widget_hide(userData->gameApplication->gameContainer.window_game);
+    gtk_widget_show(userData->gameApplication->mainContainer.window_main);
+//    gtk_main_quit();
 }
 
 void on_clicked_game_undo(GtkButton *button, UserData *userData) {
@@ -18,8 +20,11 @@ void on_clicked_game_undo(GtkButton *button, UserData *userData) {
 }
 
 void add_message(GtkWidget *message, UserData *userData) {
+    pthread_mutex_t counter_mutex = PTHREAD_MUTEX_INITIALIZER;
+    pthread_mutex_lock(&counter_mutex);
     GtkWidget *box = userData->gameApplication->gameContainer.box_message;
     gtk_box_pack_start(GTK_BOX(box), message, FALSE, FALSE, 0);
+    pthread_mutex_unlock(&counter_mutex);
 }
 
 void clear_entry_message(UserData *userData) {
@@ -44,10 +49,8 @@ void on_clicked_game_send(GtkButton *button, UserData *userData) {
     add_message(gtkLabel, userData);
     clear_entry_message(userData);
 }
-
 void on_add_message_recv(char *message, UserData *userData) {
     sleep(1);
-//    printf("Nhan : %s\n", message);
     GtkWidget *gtkLabel = gtk_label_new(message);
     gtk_widget_set_visible(gtkLabel, TRUE);
     gtk_label_set_xalign(GTK_LABEL(gtkLabel), 0);

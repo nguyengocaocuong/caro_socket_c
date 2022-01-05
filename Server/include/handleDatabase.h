@@ -15,7 +15,7 @@ void readFileFriend(ServerData *serverData);
 
 void readFileAccount(ServerData *serverData);
 
-void writeFileHistory(ServerData *serverData);
+void writeFileHistory(ServerData *serverData,char *data);
 
 void writeFileFriend(ServerData *serverData);
 

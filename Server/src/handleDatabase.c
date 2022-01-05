@@ -67,8 +67,10 @@ void readAllFileDataBase(ServerData *serverData) {
     readFileHistory(serverData);
 }
 
-void writeFileHistory(ServerData *serverData) {
-
+void writeFileHistory(ServerData *serverData,char *data){
+    FILE *file = openFile(FILE_HISTORY, "ab");
+    fprintf(file,"\n%s",data);
+    fclose(file);
 }
 
 
@@ -77,7 +79,6 @@ void writeFileFriend(ServerData *serverData) {
 }
 
 void writeFileAccount(ServerData *serverData,char *data) {
-    printf("%s\n",data);
     FILE *file = openFile(FILE_ACCOUNT, "ab");
     fprintf(file,"\n%s",data);
     fclose(file);

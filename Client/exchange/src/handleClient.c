@@ -221,8 +221,11 @@ void handleRecvData(char *dataRecv, UserData *userData) {
         userData->isNext = NEXT_NOT_YOU;
         char *account = separationDataAcceptPlay(dataRecv);
         strcpy(userData->person, account);
+        pthread_mutex_t counter_mutex = PTHREAD_MUTEX_INITIALIZER;
+        pthread_mutex_lock(&counter_mutex);
         gtk_widget_set_visible(userData->gameApplication->mainContainer.start, TRUE);
         on_new_game_clicked(NULL, userData);
+        pthread_mutex_unlock(&counter_mutex);
         if (tmp != NULL)
             free(tmp);
         if (account != NULL)
@@ -233,7 +236,10 @@ void handleRecvData(char *dataRecv, UserData *userData) {
         printf("You play first\n");
         userData->icon = X_ICON;
         userData->isNext = NEXT_YOU;
+        pthread_mutex_t counter_mutex = PTHREAD_MUTEX_INITIALIZER;
+        pthread_mutex_lock(&counter_mutex);
         gtk_widget_set_visible(userData->gameApplication->mainContainer.start, TRUE);
+        pthread_mutex_unlock(&counter_mutex);
         on_new_game_clicked(NULL, userData);
         if (tmp != NULL)
             free(tmp);

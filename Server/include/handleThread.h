@@ -11,39 +11,6 @@
 #include "structData.h"
 #include "constant.h"
 
-static void *multiModeHandle(void *argv) {
-
-    printf("Enter thread :\n");
-    int selectStatus;
-    char recvData[MAX_LEN_BUFF];
-    int recvSize;
-    DataClient *dataClient = (DataClient *) argv;
-    fd_set readFds;
-    struct timeval timeval;
-    timeval.tv_sec = 10;
-    timeval.tv_usec = 0;
-    while (1) {
-        FD_ZERO(&readFds);
-        FD_SET(dataClient->sockFd, &readFds);
-        selectStatus = select(dataClient->sockFd + 1, &readFds, NULL, NULL, NULL);
-        if (selectStatus == -1) {
-            printf("Break thread :\n");
-            pthread_exit(NULL);
-        } else if (selectStatus == 0) {
-            printf("Het thoi gian cho!\n");
-            printf("Break thread :\n");
-            pthread_exit(NULL);
-        } else {
-            recvSize = recv(dataClient->sockFd, recvData, MAX_LEN_BUFF, 0);
-            recvData[recvSize] = 0;
-            char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
-            strcpy(dataRecv, recvData);
-            handleRecvData(dataRecv, dataClient);
-            free(dataRecv);
-        }
-    }
-}
-
 static void *multiModeHandleNewGame(void *argv) {
     printf("Enter thread :\n");
     int selectStatus;
@@ -67,7 +34,6 @@ static void *multiModeHandleNewGame(void *argv) {
             pthread_exit(NULL);
         } else if (selectStatus == 0) {
             printf("Het thoi gian cho!\n");
-            printf("Break thread :\n");
             pthread_exit(NULL);
         } else {
             if (FD_ISSET(sock1, &readFds)) {
@@ -75,10 +41,8 @@ static void *multiModeHandleNewGame(void *argv) {
                 recvData[recvSize] = 0;
                 if (recvData > 0) {
                     printf("Client1 : %s\n", recvData);
-//                    send(sock2, recvData, MAX_LEN_BUFF, 0);
                 char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
                 strcpy(dataRecv, recvData);
-//                send(sock2,recvData,MAX_LEN_BUFF,0);
                 handleRecvDataNewGame(gameStatus,dataRecv, sock1,sock2);
                 free(dataRecv);
                 }
@@ -88,10 +52,8 @@ static void *multiModeHandleNewGame(void *argv) {
                 recvData[recvSize] = 0;
                 if (recvData > 0) {
                     printf("Client2 : %s\n", recvData);
-//                    send(sock1, recvData, MAX_LEN_BUFF, 0);
                     char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
                     strcpy(dataRecv, recvData);
-//                    send(sock2,recvData,MAX_LEN_BUFF,0);
                     handleRecvDataNewGame(gameStatus,dataRecv, sock2,sock1);
                     free(dataRecv);
                 }

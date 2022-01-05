@@ -1,8 +1,6 @@
 #include "initScreen.h"
 #include "initClient.h"
 #include "clientError.h"
-
-
 int main(int argc, char *argv[]) {
 
     if (argc < 3)

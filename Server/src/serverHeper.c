@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include <string.h>
 #include "serverHeper.h"
 #include "initServer.h"
@@ -22,15 +23,14 @@ char *makeSendDataHistory(ServerData *serverData, int sockId) {
     Client *currentClient = (Client *) getBySockID(serverData, sockId, TAG_CLIENT);
 
     while (tmp != NULL) {
-        strcat(sendData, SEPARATOR);
-        if (strcmp(tmp->dataHistory->firstAccount, currentClient->dataClient->name) == 0)
+        if (strcmp(tmp->dataHistory->firstAccount, currentClient->dataClient->name) == 0){
+            strcat(sendData, SEPARATOR);
             strcat(sendData, tmp->dataHistory->secondAccount);
-        else
-            strcat(sendData, tmp->dataHistory->firstAccount);
-        strcat(sendData, SEPARATOR_HISTORY);
-        strcat(sendData, tmp->dataHistory->result);
-        strcat(sendData, SEPARATOR_HISTORY);
-        strcat(sendData, tmp->dataHistory->date);
+            strcat(sendData, SEPARATOR_HISTORY);
+            strcat(sendData, tmp->dataHistory->result);
+            strcat(sendData, SEPARATOR_HISTORY);
+            strcat(sendData, tmp->dataHistory->date);
+        }
         tmp = tmp->nextHistory;
     }
     return sendData;
@@ -174,3 +174,59 @@ void separationDataRegister(char *recvRegister, DataAccount *account) {
 void separationDataNextGameStatus(char *recvCell, int *row, int *col) {
 
 }
+
+void freeServerData(ServerData *serverData) {
+    if (serverData == NULL) return;
+    if (serverData->account != NULL) {
+        Account *tmp = serverData->account;
+        Account *p = NULL;
+        while (tmp != NULL){
+            p = tmp;
+            tmp = p->nextAccount;
+            free(p->dataAccount);
+            free(p);
+        }
+        serverData->account = NULL;
+    }
+    if(serverData->friend != NULL){
+        Friend *tmp = serverData->friend;
+        Friend *p = NULL;
+        while (tmp != NULL){
+            p = tmp;
+            tmp = p->nextFriend;
+            free(p->dataFriend);
+            free(p);
+        }
+        serverData->friend = NULL;
+    }
+    if(serverData->history != NULL){
+        History *tmp = serverData->history;
+        History *p = NULL;
+        while (tmp != NULL){
+            p = tmp;
+            tmp = tmp->nextHistory;
+            free(p->dataHistory);
+            free(p);
+        }
+        serverData->history = NULL;
+    }
+    if(serverData->client != NULL){
+        Client *tmp = serverData->client;
+        Client  *p = NULL;
+        while (tmp != NULL){
+            p = tmp;
+            tmp = tmp->nextClient;
+            free(p->dataClient);
+            free(p);
+        }
+        serverData->client = NULL;
+    }
+}
+char *getCurrentTime(){
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    char *currentTime = (char*)calloc(1,MAX_LEN_BUFF);
+    sprintf(currentTime,"%d-%d-%d",tm.tm_mday,tm.tm_mon + 1,tm.tm_year + 1900);
+    return currentTime;
+}
+

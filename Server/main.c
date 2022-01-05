@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <serverHeper.h>
 #include "initServer.h"
 #include "handleServer.h"
 
@@ -23,5 +24,7 @@ int main(int argc, char *argv[]) {
             handleSelect(&serverData);
         }
     }
+
+    freeServerData(&serverData);
     return 0;
 }

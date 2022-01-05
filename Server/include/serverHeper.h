@@ -29,4 +29,7 @@ void separationDataLogin(char *recvData, DataAccount *dataAccount);
 
 char *makeSendDataNextGameStatus(int row, int col);
 
+void freeServerData(ServerData *serverData);
+
+char *getCurrentTime();
 #endif

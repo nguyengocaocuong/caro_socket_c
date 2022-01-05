@@ -5,6 +5,7 @@ CMakeFiles/Server.dir/main.c.o: ../constant/constant.h
 CMakeFiles/Server.dir/main.c.o: ../include/caroGame.h
 CMakeFiles/Server.dir/main.c.o: ../include/handleServer.h
 CMakeFiles/Server.dir/main.c.o: ../include/initServer.h
+CMakeFiles/Server.dir/main.c.o: ../include/serverHeper.h
 CMakeFiles/Server.dir/main.c.o: ../include/structData.h
 CMakeFiles/Server.dir/main.c.o: ../main.c
 
