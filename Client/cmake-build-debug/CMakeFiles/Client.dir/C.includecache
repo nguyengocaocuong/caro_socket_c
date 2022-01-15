@@ -6,19 +6,13 @@
 
 #IncludeRegexTransform: 
 
-../exchange/constant/constant.h
+../exchange/constant/clientError.h
 
-../exchange/include/handleClient.h
-structData.h
-../exchange/include/structData.h
+../exchange/include/initClient.h
+netinet/in.h
+-
 applicationScreen.h
 ../exchange/include/applicationScreen.h
-styleScreen.h
-../exchange/include/styleScreen.h
-constant.h
-../exchange/include/constant.h
-
-../exchange/include/structData.h
 
 ../views/include/applicationScreen.h
 gtk/gtk.h
@@ -26,13 +20,15 @@ gtk/gtk.h
 netinet/in.h
 -
 
-../views/include/styleScreen.h
-gtk/gtk.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c
+arpa/inet.h
 -
-
-/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c
-handleClient.h
-/home/ubuntu/Desktop/Caro/Client/views/src/handleClient.h
+stdlib.h
+-
+initClient.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.h
+clientError.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/clientError.h
 
 /usr/include/atk-1.0/atk/atk-enum-types.h
 atk/atkversion.h

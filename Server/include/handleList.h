@@ -25,4 +25,5 @@ void *getBySockName(ServerData *serverData, char *account, int tag);
 
 int isAccount(const ServerData *serverData, char *account, char *password);
 
+void *cloneIns(void *ins, int tag);
 #endif

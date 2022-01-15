@@ -26,8 +26,14 @@ static void *multiModeHandleNewGame(void *argv) {
     int maxFd = sock1 > sock2 ? sock1 + 1 : sock2 + 1;
     while (1) {
         FD_ZERO(&readFds);
-        FD_SET(sock1, &readFds);
-        FD_SET(sock2, &readFds);
+        if (gameStatus->client[0]->dataClient->status == CLIENT_STATUS_NOT_ALREADY)
+            FD_SET(sock1, &readFds);
+        else
+            pthread_exit(NULL);
+        if (gameStatus->client[1]->dataClient->status == CLIENT_STATUS_NOT_ALREADY)
+            FD_SET(sock2, &readFds);
+        else
+            pthread_exit(NULL);
         selectStatus = select(maxFd, &readFds, NULL, NULL, NULL);
         if (selectStatus == -1) {
             printf("Break thread :\n");
@@ -39,22 +45,24 @@ static void *multiModeHandleNewGame(void *argv) {
             if (FD_ISSET(sock1, &readFds)) {
                 recvSize = recv(sock1, recvData, MAX_LEN_BUFF, 0);
                 recvData[recvSize] = 0;
-                if (recvData > 0) {
+                if (recvSize > 0) {
                     printf("Client1 : %s\n", recvData);
-                char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
-                strcpy(dataRecv, recvData);
-                handleRecvDataNewGame(gameStatus,dataRecv, sock1,sock2);
-                free(dataRecv);
+                    char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
+                    strcpy(dataRecv, recvData);
+                    if(dataRecv == NULL || strlen(dataRecv) <= 0) continue;
+                    handleRecvDataNewGame(gameStatus, dataRecv, sock1, sock2);
+                    free(dataRecv);
                 }
             }
             if (FD_ISSET(sock2, &readFds)) {
                 recvSize = recv(sock2, recvData, MAX_LEN_BUFF, 0);
                 recvData[recvSize] = 0;
-                if (recvData > 0) {
+                if (recvSize > 0) {
                     printf("Client2 : %s\n", recvData);
                     char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
                     strcpy(dataRecv, recvData);
-                    handleRecvDataNewGame(gameStatus,dataRecv, sock2,sock1);
+                    if(dataRecv == NULL || strlen(dataRecv) <= 0) continue;
+                    handleRecvDataNewGame(gameStatus, dataRecv, sock2, sock1);
                     free(dataRecv);
                 }
             }

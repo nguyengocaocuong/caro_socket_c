@@ -1,0 +1,32 @@
+button{
+    background-image: none;
+    background-color: transparent;
+    color: #000000;
+    border-radius: 25px;
+    border:2px solid #ff0000;
+}
+button:hover{
+    background-color: #de0f3f;
+}
+.entry{
+    background-image: none;
+    background-color: sandybrown;
+    border:none;
+    border-bottom: 2px solid #f8de00;
+    color:blue;
+}
+window{
+    background-image: url("../screen/image/login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.back{
+    border:none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: red;
+    font-weight: bold;
+}
+.back:hover{
+    background-color: #0020f3;
+}

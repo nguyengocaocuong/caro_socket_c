@@ -29,7 +29,7 @@ int registerAccount(char *accountName, char *password, int sockFd) {
 
 int loginAccount(char *accountName, char *password, int sockFd) {
     char recvData[MAX_LEN_BUFF];
-    int recvSize = 0;
+    int recvSize;
     char *sendData = makeSendDataLogin(accountName, password);
 
     send(sockFd, sendData, MAX_LEN_BUFF, 0);

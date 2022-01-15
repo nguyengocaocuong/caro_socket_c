@@ -120,6 +120,19 @@ void removeBySocketID(ServerData *serverData, int sockID, int tag) {
     }
 }
 
+void *cloneIns(void *ins, int tag){
+    if(tag == TAG_CLIENT){
+        DataClient *dataClient = NULL;
+        dataClient =  createDataClient(((Client*)ins)->dataClient->sockFd, ((Client*)ins)->dataClient->clientAddr);
+        strcpy(dataClient->name, ((Client*)ins)->dataClient->name);
+        Client *newIns = (Client*)calloc(1,sizeof(Client*));
+        newIns->nextClient = NULL;
+        newIns->dataClient=  dataClient;
+        return newIns;
+    }
+    return NULL;
+}
+
 void *getBySockID(ServerData *serverData, int sockId, int tag) {
     if (tag != TAG_CLIENT) return NULL;
     if (serverData->client == NULL) return NULL;
