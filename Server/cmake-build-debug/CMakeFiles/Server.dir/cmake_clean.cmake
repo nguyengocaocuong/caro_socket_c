@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/main.c.o"
   "CMakeFiles/Server.dir/src/caroGame.c.o"
+  "CMakeFiles/Server.dir/src/caro_server.c.o"
   "CMakeFiles/Server.dir/src/handleDatabase.c.o"
   "CMakeFiles/Server.dir/src/handleList.c.o"
   "CMakeFiles/Server.dir/src/handleServer.c.o"

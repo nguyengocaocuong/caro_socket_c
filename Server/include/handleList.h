@@ -3,27 +3,29 @@
 
 #include "structData.h"
 
-void addList(ServerData *serverData, void *data, int tag);
+void addList(void *data, int tag);
 
-void freeList(ServerData *serverData, int tag);
+void freeList(int tag);
 
-void removeByAccount(ServerData *serverData, char *account, int tag);
+void removeByAccount(char *account, int tag);
 
-void removeBySocketID(ServerData *serverData, int sockID, int tag);
+void removeBySocketID(int sockID, int tag);
 
-int isByAccount(const ServerData *serverData, char *name, int tag);
+int isByAccount(const char *name, int tag);
 
-int isBySocketId(const ServerData *serverData, int sockID, int tag);
+int isBySocketId(const int sockID, int tag);
 
-int isClientAlreadyForNewGameByAccount(const ServerData *serverData, char *account);
+int isClientAlreadyForNewGameByAccount(const char *account);
 
-int isClientAlreadyForNewGameBySockID(const ServerData *serverData, char *account);
+int isClientAlreadyForNewGameBySockID(const char *account);
 
-void *getBySockID(ServerData *serverData, int sockId, int tag);
+void *getBySockID(int sockId, int tag);
 
-void *getBySockName(ServerData *serverData, char *account, int tag);
+void *getBySockName(char *account, int tag);
 
-int isAccount(const ServerData *serverData, char *account, char *password);
+int isAccount(const char *account, char *password);
 
 void *cloneIns(void *ins, int tag);
+
+void setStatus(int sockFd, int status);
 #endif

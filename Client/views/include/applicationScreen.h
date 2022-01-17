@@ -73,8 +73,6 @@ typedef struct {
     GtkWidget *fixed_notify;
     GtkWidget *radio_play_with_machine;
     GtkWidget *radio_play_with_person;
-    GtkWidget *radio_x;
-    GtkWidget *radio_o;
 } MainContainer;
 
 typedef struct {

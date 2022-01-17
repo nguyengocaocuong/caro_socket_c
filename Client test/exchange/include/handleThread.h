@@ -33,7 +33,8 @@ static void *multiModeHandle(void *argv) {
             recvData[recvSize] = 0;
             char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
             strcpy(dataRecv, recvData);
-            handleRecvData(dataRecv, userData);
+            if (recvSize > 0)
+                handleRecvData(dataRecv, userData);
             free(dataRecv);
         }
     }

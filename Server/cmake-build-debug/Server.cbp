@@ -86,6 +86,9 @@
 		<Unit filename="/home/ubuntu/Desktop/Caro/Server/src/caroGame.c">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/Desktop/Caro/Server/src/caro_server.c">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/Desktop/Caro/Server/src/handleDatabase.c">
 			<Option target="Server"/>
 		</Unit>

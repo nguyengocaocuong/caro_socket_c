@@ -24,7 +24,6 @@
 #define CLIENT_STATUS_NOT_ALREADY 3
 
 
-
 #define IS_MACHINE 1
 #define NOT_MACHINE 2
 

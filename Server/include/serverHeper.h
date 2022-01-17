@@ -3,9 +3,9 @@
 
 #include "structData.h"
 
-char *makeSendDataHistory(ServerData *serverData, int sockId);
+char *makeSendDataHistory(int sockId);
 
-char *makeSendDataOnlineAccount(ServerData *serverData, int sockId);
+char *makeSendDataOnlineAccount(int sockId);
 
 char *makeSendDataAcceptPlay(char *account);
 
@@ -29,7 +29,8 @@ void separationDataLogin(char *recvData, DataAccount *dataAccount);
 
 char *makeSendDataNextGameStatus(int row, int col);
 
-void freeServerData(ServerData *serverData);
+void freeServerData();
 
 char *getCurrentTime();
+
 #endif

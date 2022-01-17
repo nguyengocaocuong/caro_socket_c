@@ -5,6 +5,6 @@
 #include "caroGame.h"
 
 
-int initServer(ServerData *serverData, char *port);
+int initServer(char *port);
 
 #endif

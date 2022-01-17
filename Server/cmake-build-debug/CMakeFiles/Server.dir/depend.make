@@ -14,6 +14,9 @@ CMakeFiles/Server.dir/src/caroGame.c.o: ../include/caroGame.h
 CMakeFiles/Server.dir/src/caroGame.c.o: ../include/structData.h
 CMakeFiles/Server.dir/src/caroGame.c.o: ../src/caroGame.c
 
+CMakeFiles/Server.dir/src/caro_server.c.o: ../include/caro_server.h
+CMakeFiles/Server.dir/src/caro_server.c.o: ../src/caro_server.c
+
 CMakeFiles/Server.dir/src/handleDatabase.c.o: ../constant/constant.h
 CMakeFiles/Server.dir/src/handleDatabase.c.o: ../include/handleDatabase.h
 CMakeFiles/Server.dir/src/handleDatabase.c.o: ../include/handleList.h

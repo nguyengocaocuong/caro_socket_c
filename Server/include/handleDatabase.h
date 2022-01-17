@@ -7,19 +7,19 @@
 
 FILE *openFile(const char *fileName, const char *mode);
 
-void readAllFileDataBase(ServerData *serverData);
+void readAllFileDataBase();
 
-void readFileHistory(ServerData *serverData);
+void readFileHistory();
 
-void readFileFriend(ServerData *serverData);
+void readFileFriend();
 
-void readFileAccount(ServerData *serverData);
+void readFileAccount();
 
-void writeFileHistory(ServerData *serverData,char *data);
+void writeFileHistory(char *data);
 
-void writeFileFriend(ServerData *serverData);
+void writeFileFriend();
 
-void writeFileAccount(ServerData *serverData,char *data);
+void writeFileAccount(char *data);
 
 #endif
 

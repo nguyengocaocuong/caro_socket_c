@@ -16,14 +16,14 @@ char *makeSendDataNextGameStatus(int row, int col) {
     return NULL;
 }
 
-char *makeSendDataHistory(ServerData *serverData, int sockId) {
+char *makeSendDataHistory(int sockId) {
     char *sendData = (char *) calloc(1, MAX_LEN_BUFF);
     strcat(sendData, PREFIX_HISTORY);
-    History *tmp = serverData->history;
-    Client *currentClient = (Client *) getBySockID(serverData, sockId, TAG_CLIENT);
+    History *tmp = serverData.history;
+    Client *currentClient = (Client *) getBySockID(sockId, TAG_CLIENT);
 
     while (tmp != NULL) {
-        if (strcmp(tmp->dataHistory->firstAccount, currentClient->dataClient->name) == 0){
+        if (strcmp(tmp->dataHistory->firstAccount, currentClient->dataClient->name) == 0) {
             strcat(sendData, SEPARATOR);
             strcat(sendData, tmp->dataHistory->secondAccount);
             strcat(sendData, SEPARATOR_HISTORY);
@@ -36,11 +36,11 @@ char *makeSendDataHistory(ServerData *serverData, int sockId) {
     return sendData;
 }
 
-char *makeSendDataOnlineAccount(ServerData *serverData, int sockId) {
-    Client *currentClient = getBySockID(serverData, sockId, TAG_CLIENT);
+char *makeSendDataOnlineAccount(int sockId) {
+    Client *currentClient = getBySockID(sockId, TAG_CLIENT);
     char *sendData = (char *) calloc(1, MAX_LEN_BUFF);
     strcat(sendData, PREFIX_ONLINE);
-    Client *tmp = serverData->client;
+    Client *tmp = serverData.client;
     while (tmp != NULL) {
         if (strlen(tmp->dataClient->name) == 0 || strcmp(tmp->dataClient->name, currentClient->dataClient->name) == 0) {
             tmp = tmp->nextClient;
@@ -180,7 +180,7 @@ void freeServerData(ServerData *serverData) {
     if (serverData->account != NULL) {
         Account *tmp = serverData->account;
         Account *p = NULL;
-        while (tmp != NULL){
+        while (tmp != NULL) {
             p = tmp;
             tmp = p->nextAccount;
             free(p->dataAccount);
@@ -188,10 +188,10 @@ void freeServerData(ServerData *serverData) {
         }
         serverData->account = NULL;
     }
-    if(serverData->friend != NULL){
+    if (serverData->friend != NULL) {
         Friend *tmp = serverData->friend;
         Friend *p = NULL;
-        while (tmp != NULL){
+        while (tmp != NULL) {
             p = tmp;
             tmp = p->nextFriend;
             free(p->dataFriend);
@@ -199,10 +199,10 @@ void freeServerData(ServerData *serverData) {
         }
         serverData->friend = NULL;
     }
-    if(serverData->history != NULL){
+    if (serverData->history != NULL) {
         History *tmp = serverData->history;
         History *p = NULL;
-        while (tmp != NULL){
+        while (tmp != NULL) {
             p = tmp;
             tmp = tmp->nextHistory;
             free(p->dataHistory);
@@ -210,10 +210,10 @@ void freeServerData(ServerData *serverData) {
         }
         serverData->history = NULL;
     }
-    if(serverData->client != NULL){
+    if (serverData->client != NULL) {
         Client *tmp = serverData->client;
-        Client  *p = NULL;
-        while (tmp != NULL){
+        Client *p = NULL;
+        while (tmp != NULL) {
             p = tmp;
             tmp = tmp->nextClient;
             free(p->dataClient);
@@ -222,11 +222,12 @@ void freeServerData(ServerData *serverData) {
         serverData->client = NULL;
     }
 }
-char *getCurrentTime(){
+
+char *getCurrentTime() {
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
-    char *currentTime = (char*)calloc(1,MAX_LEN_BUFF);
-    sprintf(currentTime,"%d-%d-%d",tm.tm_mday,tm.tm_mon + 1,tm.tm_year + 1900);
+    char *currentTime = (char *) calloc(1, MAX_LEN_BUFF);
+    sprintf(currentTime, "%d-%d-%d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
     return currentTime;
 }
 

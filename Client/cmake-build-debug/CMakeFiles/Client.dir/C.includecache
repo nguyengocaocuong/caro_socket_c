@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-../exchange/constant/clientError.h
+../exchange/constant/constant.h
 
-../exchange/include/initClient.h
-netinet/in.h
--
-applicationScreen.h
-../exchange/include/applicationScreen.h
+../exchange/include/clientHeper.h
+structData.h
+../exchange/include/structData.h
+
+../exchange/include/structData.h
 
 ../views/include/applicationScreen.h
 gtk/gtk.h
@@ -20,15 +20,39 @@ gtk/gtk.h
 netinet/in.h
 -
 
-/home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c
-arpa/inet.h
+../views/include/handleLogicGameScreen.h
+applicationScreen.h
+../views/include/applicationScreen.h
+
+../views/include/handleLogicMainScreen.h
+structData.h
+../views/include/structData.h
+applicationScreen.h
+../views/include/applicationScreen.h
+
+../views/include/styleScreen.h
+gtk/gtk.h
 -
+
+/home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c
 stdlib.h
 -
-initClient.h
-/home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.h
-clientError.h
-/home/ubuntu/Desktop/Caro/Client/exchange/src/clientError.h
+stdio.h
+-
+sys/socket.h
+-
+string.h
+-
+clientHeper.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.h
+constant.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/constant.h
+handleLogicGameScreen.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/handleLogicGameScreen.h
+handleLogicMainScreen.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/handleLogicMainScreen.h
+styleScreen.h
+/home/ubuntu/Desktop/Caro/Client/exchange/src/styleScreen.h
 
 /usr/include/atk-1.0/atk/atk-enum-types.h
 atk/atkversion.h

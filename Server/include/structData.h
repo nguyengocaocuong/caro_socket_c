@@ -62,7 +62,7 @@ typedef struct {
 
 typedef struct {
     Client *client[2];
-    ServerData  **serverData;
+    ServerData **serverData;
     int gridGame[15][15];
     int status;
     int nextCell;
@@ -79,5 +79,5 @@ DataFriend *createDataFriend(char *data);
 DataAccount *createDataAccount(char *data);
 
 
-//ServerData  serverData;
+ServerData serverData;
 #endif

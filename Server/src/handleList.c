@@ -5,18 +5,18 @@
 #include "handleList.h"
 #include "constant.h"
 
-void addList(ServerData *serverData, void *data, int tag) {
+void addList(void *data, int tag) {
     void *root = NULL;
     switch (tag) {
         case TAG_CLIENT:
             root = (Client *) calloc(1, sizeof(Client));
             ((Client *) root)->dataClient = (DataClient *) data;
             ((Client *) root)->nextClient = NULL;
-            if (serverData->client == NULL) {
-                serverData->client = ((Client *) root);
+            if (serverData.client == NULL) {
+                serverData.client = ((Client *) root);
                 printf("init server\n");
             } else {
-                Client *tmp = serverData->client;
+                Client *tmp = serverData.client;
                 while (tmp->nextClient != NULL)
                     tmp = tmp->nextClient;
                 tmp->nextClient = ((Client *) root);
@@ -26,10 +26,10 @@ void addList(ServerData *serverData, void *data, int tag) {
             root = (Account *) calloc(1, sizeof(Account));
             ((Account *) root)->dataAccount = (DataAccount *) data;
             ((Account *) root)->nextAccount = NULL;
-            if (serverData->account == NULL) {
-                serverData->account = ((Account *) root);
+            if (serverData.account == NULL) {
+                serverData.account = ((Account *) root);
             } else {
-                Account *tmp = serverData->account;
+                Account *tmp = serverData.account;
                 while (tmp->nextAccount != NULL)
                     tmp = tmp->nextAccount;
                 tmp->nextAccount = ((Account *) root);
@@ -39,10 +39,10 @@ void addList(ServerData *serverData, void *data, int tag) {
             root = (Friend *) calloc(1, sizeof(Friend));
             ((Friend *) root)->dataFriend = (DataFriend *) data;
             ((Friend *) root)->nextFriend = NULL;
-            if (serverData->friend == NULL) {
-                serverData->friend = ((Friend *) root);
+            if (serverData.friend == NULL) {
+                serverData.friend = ((Friend *) root);
             } else {
-                Friend *tmp = serverData->friend;
+                Friend *tmp = serverData.friend;
                 while (tmp->nextFriend != NULL)
                     tmp = tmp->nextFriend;
                 tmp->nextFriend = ((Friend *) root);
@@ -52,10 +52,10 @@ void addList(ServerData *serverData, void *data, int tag) {
             root = (History *) calloc(1, sizeof(History));
             ((History *) root)->dataHistory = (DataHistory *) data;
             ((History *) root)->nextHistory = NULL;
-            if (serverData->history == NULL) {
-                serverData->history = ((History *) root);
+            if (serverData.history == NULL) {
+                serverData.history = ((History *) root);
             } else {
-                History *tmp = serverData->history;
+                History *tmp = serverData.history;
                 while (tmp->nextHistory != NULL)
                     tmp = tmp->nextHistory;
                 tmp->nextHistory = ((History *) root);
@@ -66,16 +66,16 @@ void addList(ServerData *serverData, void *data, int tag) {
     }
 }
 
-void freeList(ServerData *serverData, int tag) {
+void freeList(int tag) {
     switch (tag) {
         case TAG_CLIENT:
-            if (serverData->client == NULL) return;
-            Client *tmp = serverData->client;
-            while (serverData->client != NULL) {
-                serverData->client = serverData->client->nextClient;
+            if (serverData.client == NULL) return;
+            Client *tmp = serverData.client;
+            while (serverData.client != NULL) {
+                serverData.client = serverData.client->nextClient;
                 free(tmp->dataClient);
                 free(tmp);
-                tmp = serverData->client;
+                tmp = serverData.client;
             }
             break;
         case TAG_ACCOUNT:
@@ -93,25 +93,25 @@ void freeList(ServerData *serverData, int tag) {
 
 }
 
-void removeBySocketID(ServerData *serverData, int sockID, int tag) {
+void removeBySocketID(int sockID, int tag) {
     if (tag != TAG_CLIENT) return;
     void *tmp = NULL;
     void *preTmp = NULL;
-    if (serverData->client == NULL) return;
-    tmp = (Client *) serverData->client;
-    preTmp = (Client *) serverData->client;
+    if (serverData.client == NULL) return;
+    tmp = (Client *) serverData.client;
+    preTmp = (Client *) serverData.client;
     while (tmp != NULL) {
         if (((Client *) tmp)->dataClient->sockFd == sockID) {
             if ((Client *) tmp == (Client *) preTmp) {
                 preTmp = ((Client *) preTmp)->nextClient;
-                serverData->client = preTmp;
+                serverData.client = preTmp;
                 free(((Client *) tmp)->dataClient);
                 free(tmp);
                 break;
             } else {
                 ((Client *) preTmp)->nextClient = ((Client *) tmp)->nextClient;
                 free(((Client *) tmp)->dataClient);
-                free((Client*)tmp);
+                free((Client *) tmp);
                 break;
             }
         }
@@ -120,23 +120,23 @@ void removeBySocketID(ServerData *serverData, int sockID, int tag) {
     }
 }
 
-void *cloneIns(void *ins, int tag){
-    if(tag == TAG_CLIENT){
+void *cloneIns(void *ins, int tag) {
+    if (tag == TAG_CLIENT) {
         DataClient *dataClient = NULL;
-        dataClient =  createDataClient(((Client*)ins)->dataClient->sockFd, ((Client*)ins)->dataClient->clientAddr);
-        strcpy(dataClient->name, ((Client*)ins)->dataClient->name);
-        Client *newIns = (Client*)calloc(1,sizeof(Client*));
+        dataClient = createDataClient(((Client *) ins)->dataClient->sockFd, ((Client *) ins)->dataClient->clientAddr);
+        strcpy(dataClient->name, ((Client *) ins)->dataClient->name);
+        Client *newIns = (Client *) calloc(1, sizeof(Client *));
         newIns->nextClient = NULL;
-        newIns->dataClient=  dataClient;
+        newIns->dataClient = dataClient;
         return newIns;
     }
     return NULL;
 }
 
-void *getBySockID(ServerData *serverData, int sockId, int tag) {
+void *getBySockID(int sockId, int tag) {
     if (tag != TAG_CLIENT) return NULL;
-    if (serverData->client == NULL) return NULL;
-    Client *tmp = serverData->client;
+    if (serverData.client == NULL) return NULL;
+    Client *tmp = serverData.client;
     while (tmp != NULL) {
         if (tmp->dataClient->sockFd == sockId)
             return tmp;
@@ -145,10 +145,22 @@ void *getBySockID(ServerData *serverData, int sockId, int tag) {
     return NULL;
 }
 
-void *getBySockName(ServerData *serverData, char *account, int tag) {
+void setStatus(int sockId, int status){
+    if (serverData.client == NULL) return ;
+    Client *tmp = serverData.client;
+    while (tmp != NULL) {
+        if (tmp->dataClient->sockFd == sockId){
+            printf("reset status for client\n");
+            tmp->dataClient->status = status;
+            return;
+        }
+        tmp = tmp->nextClient;
+    }
+}
+void *getBySockName(char *account, int tag) {
     if (tag != TAG_CLIENT) return NULL;
-    if (serverData->client == NULL) return NULL;
-    Client *tmp = serverData->client;
+    if (serverData.client == NULL) return NULL;
+    Client *tmp = serverData.client;
     while (tmp != NULL) {
         if (strcmp(tmp->dataClient->name, account) == 0)
             return tmp;
@@ -157,9 +169,9 @@ void *getBySockName(ServerData *serverData, char *account, int tag) {
     return NULL;
 }
 
-int isAccount(const ServerData *serverData, char *account, char *password) {
-    if (serverData->account == NULL) return 1;
-    Account *tmp = serverData->account;
+int isAccount(const char *account, char *password) {
+    if (serverData.account == NULL) return 1;
+    Account *tmp = serverData.account;
     while (tmp != NULL) {
         if (strcmp(tmp->dataAccount->account, account) == 0 && strcmp(tmp->dataAccount->password, password) == 0)
             return 0;

@@ -109,8 +109,11 @@ void on_history_clicked(GtkButton *button, UserData *userData) {
 
 void on_request_clicked(GtkButton *button, UserData *userData) {
     const gchar *account = gtk_entry_get_text(GTK_ENTRY(userData->gameApplication->mainContainer.entry_account));
+    if(account == NULL || strlen(account) < 1) return;
     sendRequestNewGame((char *) account,
                        userData->sockFd);
+    if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(userData->gameApplication->mainContainer.radio_play_with_person)))
+        printf("O nay da duoc chon");
 }
 
 void on_start_clicked(GtkButton *button, UserData *userData) {

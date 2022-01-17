@@ -130,7 +130,7 @@ void initGameScreen(UserData *userData) {
             name[2] = '\0';
             gtk_widget_set_name(button, name);
             gtk_widget_set_visible(button,TRUE);
-            g_signal_connect(button, "clicked", on_clicked_cell, userData);
+            g_signal_connect(button, "clicked", G_CALLBACK(on_clicked_cell), userData);
             gtk_grid_attach(GTK_GRID(userData->gameApplication->gameContainer.grid_caro), button, i, j, 1, 1);
         }
     }
@@ -206,10 +206,6 @@ void initMainScreen(UserData *userData) {
                                                                                                   "entry_account");
     userData->gameApplication->mainContainer.fixed_notify = (GtkWidget *) gtk_builder_get_object(builder,
                                                                                                  "fixed_notify");
-    userData->gameApplication->mainContainer.radio_o = (GtkWidget *) gtk_builder_get_object(builder,
-                                                                                            "radio_o");
-    userData->gameApplication->mainContainer.radio_x = (GtkWidget *) gtk_builder_get_object(builder,
-                                                                                            "radio_x");
     userData->gameApplication->mainContainer.radio_play_with_machine = (GtkWidget *) gtk_builder_get_object(builder,
                                                                                                             "radio_play_with_machine");
     userData->gameApplication->mainContainer.radio_play_with_person = (GtkWidget *) gtk_builder_get_object(builder,

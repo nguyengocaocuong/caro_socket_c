@@ -5,13 +5,13 @@
 #include "constant.h"
 
 
-void handleRecvData(int sockFd, ServerData *serverData);
+void handleRecvData(int sockFd);
 
-void updateNewReadFds(ServerData *serverData);
+void updateNewReadFds();
 
-void handleSelect(ServerData *serverData);
+void handleSelect();
 
-void handleAcceptConnect(ServerData *serverData);
+void handleAcceptConnect();
 
 void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSockFd, int otherSockFd);
 

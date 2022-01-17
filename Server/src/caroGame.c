@@ -30,8 +30,8 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
         if (right == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;
@@ -49,8 +49,8 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
         if (right + left == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;
@@ -73,8 +73,8 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
         if (down == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;
@@ -91,8 +91,8 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
         if (up + down == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;
@@ -116,8 +116,8 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
         if (left_top == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;
@@ -130,11 +130,13 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
     cl = col;
     while (rl < 14 && cl < 14 && gameStatus->gridGame[row][col] == gameStatus->gridGame[++rl][++cl]) {
         right_down++;
+        win[index][0] = rl;
+        win[index++][1] = cl;
         if (left_top + right_down == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;
@@ -152,11 +154,13 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
     cl = col;
     while (cl < 14 && rl > -1 && gameStatus->gridGame[row][col] == gameStatus->gridGame[--rl][++cl]) {
         right_top++;
+        win[index][0] = rl;
+        win[index++][1] = cl;
         if (right_top == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;
@@ -169,11 +173,13 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
     cl = col;
     while (rl < 14 && cl > -1 && gameStatus->gridGame[row][col] == gameStatus->gridGame[++rl][--cl]) {
         left_down++;
+        win[index][0] = rl;
+        win[index++][1] = cl;
         if (right_top + left_down == 5) {
             printf("WIN : ");
             for (int i = 0; i < 5; ++i) {
-                printf("[%d][%d] | ",win[i][0],win[i][1]);
-                int *cell = (int*)calloc(2,sizeof(int));
+                printf("[%d][%d] | ", win[i][0], win[i][1]);
+                int *cell = (int *) calloc(2, sizeof(int));
                 cell[0] = win[i][0];
                 cell[1] = win[i][1];
                 winIndex[i] = cell;

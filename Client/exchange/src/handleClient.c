@@ -157,7 +157,7 @@ void handleRecvData(char *dataRecv, UserData *userData) {
         gtk_widget_set_size_request(GTK_WIDGET(btnOk), 60, 36);
         gtk_box_pack_start(GTK_BOX(box), GTK_WIDGET(btnOk), FALSE, FALSE, 0);
         gtk_widget_set_name(btnOk, account);
-        g_signal_connect(GTK_WIDGET(btnOk), "clicked", on_click_add_friend_ok, userData->sockFd);
+        g_signal_connect(GTK_WIDGET(btnOk), "clicked", G_CALLBACK(on_click_add_friend_ok), userData->sockFd);
         css_set(userData->provider_main, btnOk);
         add_class(btnOk, "btn-add");
         gtk_widget_set_visible(btnOk, TRUE);
@@ -193,7 +193,7 @@ void handleRecvData(char *dataRecv, UserData *userData) {
         gtk_label_set_xalign(GTK_LABEL(name), 0);
         gtk_label_set_xalign(GTK_LABEL(name), 0.3);
 
-        GtkWidget *btnOk = gtk_button_new_with_label("Chơi");
+        GtkWidget *btnOk = gtk_button_new_with_label("Ok");
         gtk_widget_set_size_request(GTK_WIDGET(btnOk), 60, 36);
         gtk_box_pack_start(GTK_BOX(box), GTK_WIDGET(btnOk), FALSE, FALSE, 0);
         gtk_widget_set_name(btnOk, account);

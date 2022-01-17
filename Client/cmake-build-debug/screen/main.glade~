@@ -396,12 +396,12 @@
                             </child>
                             <child>
                               <object class="GtkBox" id="box_enter_person_name">
-                                <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="spacing">3</property>
                                 <child>
                                   <object class="GtkEntry" id="entry_account">
                                     <property name="width_request">255</property>
+                                    <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="placeholder_text" translatable="yes">Nhập tên nguời chơi </property>
                                     <style>

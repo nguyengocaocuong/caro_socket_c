@@ -49,7 +49,7 @@ static void *multiModeHandleNewGame(void *argv) {
                     printf("Client1 : %s\n", recvData);
                     char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
                     strcpy(dataRecv, recvData);
-                    if(dataRecv == NULL || strlen(dataRecv) <= 0) continue;
+                    if (dataRecv == NULL || strlen(dataRecv) <= 0) continue;
                     handleRecvDataNewGame(gameStatus, dataRecv, sock1, sock2);
                     free(dataRecv);
                 }
@@ -61,7 +61,7 @@ static void *multiModeHandleNewGame(void *argv) {
                     printf("Client2 : %s\n", recvData);
                     char *dataRecv = (char *) calloc(1, MAX_LEN_BUFF);
                     strcpy(dataRecv, recvData);
-                    if(dataRecv == NULL || strlen(dataRecv) <= 0) continue;
+                    if (dataRecv == NULL || strlen(dataRecv) <= 0) continue;
                     handleRecvDataNewGame(gameStatus, dataRecv, sock2, sock1);
                     free(dataRecv);
                 }

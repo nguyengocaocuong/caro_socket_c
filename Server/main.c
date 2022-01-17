@@ -5,12 +5,11 @@
 
 
 int main(int argc, char *argv[]) {
-    ServerData serverData;
 //    if (argc > 0 && initServer(&serverData, argv[1])) {
 //        printf("Can't create socket!\n");
 //        return -1;
 //    }
-    initServer(&serverData, argv[1]);
+    initServer(argv[1]);
     while (1) {
         updateNewReadFds(&serverData);
         int selectStatus = select(serverData.maxFd, &(serverData.readFds), NULL, NULL, NULL);

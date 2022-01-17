@@ -11,7 +11,7 @@ FILE *openFile(const char *fileName, const char *mode) {
     return file;
 }
 
-void readFileHistory(ServerData *serverData) {
+void readFileHistory() {
     FILE *file = openFile(FILE_HISTORY, "r");
     if (file == NULL) {
         printf("Can't open file %s for read\n", FILE_HISTORY);
@@ -23,12 +23,12 @@ void readFileHistory(ServerData *serverData) {
         fgets(buff, MAX_LEN_BUFF, file);
         if (!feof(file))
             buff[strlen(buff) - 1] = 0;
-        addList(serverData, createDataHistory(buff), TAG_HISTORY);
+        addList(createDataHistory(buff), TAG_HISTORY);
     }
     fclose(file);
 }
 
-void readFileFriend(ServerData *serverData) {
+void readFileFriend() {
     FILE *file = openFile(FILE_FRIEND, "r");
     if (file == NULL) {
         printf("Can't open file %s for read\n", FILE_FRIEND);
@@ -40,12 +40,12 @@ void readFileFriend(ServerData *serverData) {
         fgets(buff, MAX_LEN_BUFF, file);
         if (!feof(file))
             buff[strlen(buff) - 1] = 0;
-        addList(serverData, createDataFriend(buff), TAG_FRIEND);
+        addList(createDataFriend(buff), TAG_FRIEND);
     }
     fclose(file);
 }
 
-void readFileAccount(ServerData *serverData) {
+void readFileAccount() {
     FILE *file = openFile(FILE_ACCOUNT, "r");
     if (file == NULL) {
         printf("Can't open file %s for read\n", FILE_ACCOUNT);
@@ -56,31 +56,31 @@ void readFileAccount(ServerData *serverData) {
         fgets(buff, MAX_LEN_BUFF, file);
         if (!feof(file))
             buff[strlen(buff) - 1] = 0;
-        addList(serverData, createDataAccount(buff), TAG_ACCOUNT);
+        addList(createDataAccount(buff), TAG_ACCOUNT);
     }
     fclose(file);
 }
 
-void readAllFileDataBase(ServerData *serverData) {
-    readFileAccount(serverData);
-    readFileFriend(serverData);
-    readFileHistory(serverData);
+void readAllFileDataBase() {
+    readFileAccount();
+    readFileFriend();
+    readFileHistory();
 }
 
-void writeFileHistory(ServerData *serverData,char *data){
+void writeFileHistory(char *data) {
     FILE *file = openFile(FILE_HISTORY, "ab");
-    fprintf(file,"\n%s",data);
+    fprintf(file, "\n%s", data);
     fclose(file);
 }
 
 
-void writeFileFriend(ServerData *serverData) {
+void writeFileFriend() {
 
 }
 
-void writeFileAccount(ServerData *serverData,char *data) {
+void writeFileAccount(char *data) {
     FILE *file = openFile(FILE_ACCOUNT, "ab");
-    fprintf(file,"\n%s",data);
+    fprintf(file, "\n%s", data);
     fclose(file);
 }
 

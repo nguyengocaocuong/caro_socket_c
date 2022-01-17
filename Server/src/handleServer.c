@@ -18,7 +18,7 @@ int getPortFromSockAddr(const struct sockaddr_in sockAddrIn) {
     return ntohs(sockAddrIn.sin_port);
 }
 
-void handleRecvData(int sockFd, ServerData *serverData) {
+void handleRecvData(int sockFd) {
     char recvData[MAX_LEN_BUFF];
     int recvSize;
     recvSize = recv(sockFd, recvData, MAX_LEN_BUFF, 0);
@@ -27,9 +27,9 @@ void handleRecvData(int sockFd, ServerData *serverData) {
     char *tmp = (char *) calloc(1, MAX_LEN_BUFF);
     strcpy(tmp, recvData);
     char *token = strtok(tmp, SEPARATOR);
-
+    if(recvSize <= 0) return;
     if (strcmp(token, PREFIX_CLOSE) == 0) {
-        removeBySocketID(serverData, sockFd, TAG_CLIENT);
+        removeBySocketID(sockFd, TAG_CLIENT);
         close(sockFd);
         free(tmp);
         return;
@@ -37,12 +37,12 @@ void handleRecvData(int sockFd, ServerData *serverData) {
     if (strcmp(token, PREFIX_LOGIN) == 0) {
         DataAccount dataAccount;
         separationDataLogin(recvData, &dataAccount);
-        if (isAccount(serverData, dataAccount.account, dataAccount.password)) {
+        if (isAccount(dataAccount.account, dataAccount.password)) {
             send(sockFd, PREFIX_FAIL, MAX_LEN_BUFF, 0);
             free(tmp);
             return;
         }
-        Client *client = (Client *) getBySockID(serverData, sockFd, TAG_CLIENT);
+        Client *client = (Client *) getBySockID(sockFd, TAG_CLIENT);
         strcpy(client->dataClient->name, dataAccount.account);
         strcpy(client->dataClient->password, dataAccount.password);
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
@@ -59,9 +59,9 @@ void handleRecvData(int sockFd, ServerData *serverData) {
 
         // kiem tra tai khoan
         printf("%s\n", data);
-        writeFileAccount(serverData, data);
-        addList(serverData, createDataAccount(data), TAG_ACCOUNT);
-        Client *client = (Client *) getBySockID(serverData, sockFd, TAG_CLIENT);
+        writeFileAccount(data);
+        addList(createDataAccount(data), TAG_ACCOUNT);
+        Client *client = (Client *) getBySockID(sockFd, TAG_CLIENT);
         strcpy(client->dataClient->name, account.account);
         strcpy(client->dataClient->password, account.password);
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
@@ -69,14 +69,14 @@ void handleRecvData(int sockFd, ServerData *serverData) {
         return;
     }
     if (strcmp(token, PREFIX_HISTORY) == 0) {
-        char *sendData = makeSendDataHistory(serverData, sockFd);
+        char *sendData = makeSendDataHistory(sockFd);
         send(sockFd, sendData, MAX_LEN_BUFF, 0);
         free(sendData);
         free(tmp);
         return;
     }
     if (strcmp(token, PREFIX_ONLINE) == 0) {
-        char *sendData = makeSendDataOnlineAccount(serverData, sockFd);
+        char *sendData = makeSendDataOnlineAccount(sockFd);
         send(sockFd, sendData, MAX_LEN_BUFF, 0);
         free(tmp);
         free(sendData);
@@ -84,24 +84,26 @@ void handleRecvData(int sockFd, ServerData *serverData) {
     }
     if (strcmp(token, PREFIX_NEW_GAME) == 0) {
         char *account = separationDataNewGame(recvData);
-        Client *client = getBySockName(serverData, account, TAG_CLIENT);
-        Client *requestClient = getBySockID(serverData, sockFd, TAG_CLIENT);
-        char *sendData = makeSendDataNewGame(requestClient->dataClient->name);
-        send(client->dataClient->sockFd, sendData, MAX_LEN_BUFF, 0);
-        free(sendData);
-        free(account);
+        Client *client = getBySockName(account, TAG_CLIENT);
+        if(client != NULL){
+            Client *requestClient = getBySockID(sockFd, TAG_CLIENT);
+            char *sendData = makeSendDataNewGame(requestClient->dataClient->name);
+            send(client->dataClient->sockFd, sendData, MAX_LEN_BUFF, 0);
+            free(sendData);
+            free(account);
+        }
         free(tmp);
         return;
     }
     if (strcmp(token, PREFIX_ACCEPT_PLAY) == 0) {
         char *account = separationDataAcceptPlay(recvData);
-        Client *client = getBySockName(serverData, account, TAG_CLIENT);
+        Client *client = getBySockName(account, TAG_CLIENT);
         if (client == NULL) {
             send(sockFd, PREFIX_FAIL_REQUEST_NEW_GAME, MAX_LEN_BUFF, 0);
             printf("%s\n", PREFIX_FAIL_REQUEST_NEW_GAME);
             return;
         }
-        Client *requestClient = getBySockID(serverData, sockFd, TAG_CLIENT);
+        Client *requestClient = getBySockID(sockFd, TAG_CLIENT);
         char *sendDataClient = makeSendDataAcceptPlay(requestClient->dataClient->name);
 
         send(sockFd, PREFIX_PLAY, MAX_LEN_BUFF, 0);
@@ -115,7 +117,7 @@ void handleRecvData(int sockFd, ServerData *serverData) {
 
         GameStatus gameStatus;
         gameStatus.client[0] = client;
-        gameStatus.client[1] =requestClient;
+        gameStatus.client[1] = requestClient;
         gameStatus.client[0]->dataClient->status = CLIENT_STATUS_NOT_ALREADY;
         gameStatus.client[1]->dataClient->status = CLIENT_STATUS_NOT_ALREADY;
         gameStatus.serverData = &serverData;
@@ -160,6 +162,7 @@ void updateNewReadFds(ServerData *serverData) {
     FD_ZERO(&(serverData->readFds));
     FD_SET(serverData->listenFD, &(serverData->readFds));
     Client *tmp = serverData->client;
+
     serverData->maxFd = 0;
     while (tmp != NULL) {
         if (tmp->dataClient->status == CLIENT_STATUS_ON) {
@@ -179,14 +182,14 @@ void handleAcceptConnect(ServerData *serverData) {
     memset(&clientAddr, 0, sizeof clientAddr);
     cnnFd = accept(serverData->listenFD, (struct sockaddr *) &clientAddr, &sockAddrLen);
     DataClient *dataClient = createDataClient(cnnFd, clientAddr);
-    addList(serverData, dataClient, TAG_CLIENT);
+    addList(dataClient, TAG_CLIENT);
 }
 
 void handleSelect(ServerData *serverData) {
     for (int i = 0; i < serverData->maxFd; ++i)
         if (FD_ISSET(i, &(serverData->readFds))) {
             if (i == serverData->listenFD) handleAcceptConnect(serverData);
-            else handleRecvData(i, serverData);
+            else handleRecvData(i);
         }
 }
 
@@ -211,18 +214,18 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
             send(requestSockFd, sendWin, MAX_LEN_BUFF, 0);
             send(otherSockFd, sendLost, MAX_LEN_BUFF, 0);
 
-            Client *winClient = getBySockID(gameStatus->serverData, requestSockFd, TAG_CLIENT);
-            Client *lostClient = getBySockID(gameStatus->serverData, otherSockFd, TAG_CLIENT);
+            Client *winClient = getBySockID(requestSockFd, TAG_CLIENT);
+            Client *lostClient = getBySockID(otherSockFd, TAG_CLIENT);
             char *history = (char *) calloc(1, MAX_LEN_BUFF);
             char *currentTime = getCurrentTime();
             sprintf(history, "%s#%s#%s#%s", winClient->dataClient->name, lostClient->dataClient->name, "win",
                     currentTime);
-            writeFileHistory(gameStatus->serverData, history);
+            writeFileHistory(history);
             free(history);
             history = (char *) calloc(1, MAX_LEN_BUFF);
             sprintf(history, "%s#%s#%s#%s", lostClient->dataClient->name, winClient->dataClient->name, "lost",
                     currentTime);
-            writeFileHistory(gameStatus->serverData, history);
+            writeFileHistory(history);
             printf("\n");
             printf("%s\n", sendWin);
             printf("%s\n", sendLost);
@@ -242,19 +245,16 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
         return;
     }
     if (strcmp(token, PREFIX_CLOSE) == 0) {
-        removeBySocketID(gameStatus->serverData, requestSockFd, TAG_CLIENT);
+        removeBySocketID(requestSockFd, TAG_CLIENT);
         pthread_exit(NULL);
     }
     if (strcmp(token, PREFIX_END_GAME) == 0) {
-//        gameStatus->client[0]->dataClient->status = CLIENT_STATUS_ON;
-//        gameStatus->client[1]->dataClient->status = CLIENT_STATUS_ON;
-//
-//        DataClient *dataClient = createDataClient(gameStatus->client[0]->dataClient->sockFd, gameStatus->client[0]->dataClient->clientAddr);
-//        DataClient *dataClient1 = createDataClient(gameStatus->client[1]->dataClient->sockFd, gameStatus->client[1]->dataClient->clientAddr);
-//        addList(&serverData, dataClient, TAG_CLIENT);
-//        addList(&serverData, dataClient1, TAG_CLIENT);
-//
-//        serverData.test = 1;
+        pthread_mutex_t counter_mutex = PTHREAD_MUTEX_INITIALIZER;
+        pthread_mutex_lock(&counter_mutex);
+        setStatus(gameStatus->client[0]->dataClient->sockFd, CLIENT_STATUS_ON);
+        setStatus(gameStatus->client[1]->dataClient->sockFd, CLIENT_STATUS_ON);
+        pthread_mutex_unlock(&counter_mutex);
+
         pthread_exit(NULL);
     }
 }
