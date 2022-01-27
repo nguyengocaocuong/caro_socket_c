@@ -339,7 +339,9 @@
                             <property name="width_request">100</property>
                             <property name="height_request">40</property>
                             <property name="can_focus">True</property>
+                            <property name="is_focus">True</property>
                             <property name="receives_default">True</property>
+                            <property name="opacity">0</property>
                             <style>
                               <class name="btn-start"/>
                             </style>
@@ -358,44 +360,8 @@
                             <property name="orientation">vertical</property>
                             <property name="spacing">5</property>
                             <child>
-                              <object class="GtkRadioButton" id="radio_play_with_machine">
-                                <property name="label" translatable="yes">Chơi với máy</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">False</property>
-                                <property name="active">True</property>
-                                <property name="draw_indicator">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkRadioButton" id="radio_play_with_person">
-                                <property name="label" translatable="yes">Chơi với nguời khác</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="receives_default">False</property>
-                                <property name="active">True</property>
-                                <property name="draw_indicator">True</property>
-                                <property name="group">radio_play_with_machine</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <placeholder/>
-                            </child>
-                            <child>
-                              <placeholder/>
-                            </child>
-                            <child>
                               <object class="GtkBox" id="box_enter_person_name">
+                                <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="spacing">3</property>
                                 <child>
@@ -440,6 +406,22 @@
                           </object>
                           <packing>
                             <property name="x">31</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="width_request">246</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">Để trống nếu bạn muốn chơi với máy</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Rachana Bold Italic 12"/>
+                              <attribute name="underline-color" value="#cccc00000000"/>
+                            </attributes>
+                          </object>
+                          <packing>
+                            <property name="x">35</property>
+                            <property name="y">43</property>
                           </packing>
                         </child>
                       </object>

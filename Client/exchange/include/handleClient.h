@@ -20,9 +20,9 @@ void sendRequestNewGame(char *account, int sockFd);
 
 void sendNextGameStatus(int row, int col, int sockFd);
 
-void handleRecvData(char *dataRecv, UserData *userData);
+void handleRecvData(char *dataRecv);
 
 void addFriend(char *account, int sockFd);
 
-void sendMessageAcceptPlay(UserData *userData);
+void sendMessageAcceptPlay();
 #endif

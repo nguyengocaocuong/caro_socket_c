@@ -8,7 +8,7 @@ DataClient *createDataClient(int sockFd, struct sockaddr_in clientAddr) {
     DataClient *dataClient = (DataClient *) calloc(1, sizeof(DataClient));
     dataClient->sockFd = sockFd;
     dataClient->clientAddr = clientAddr;
-    dataClient->status = CLIENT_STATUS_ON;
+    dataClient->status = CLIENT_STATUS_OF;
     return dataClient;
 }
 

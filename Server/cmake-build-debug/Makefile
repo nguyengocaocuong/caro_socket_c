@@ -197,33 +197,6 @@ src/caroGame.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/src/caroGame.c.s
 .PHONY : src/caroGame.c.s
 
-src/caro_server.o: src/caro_server.c.o
-
-.PHONY : src/caro_server.o
-
-# target to build an object file
-src/caro_server.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/src/caro_server.c.o
-.PHONY : src/caro_server.c.o
-
-src/caro_server.i: src/caro_server.c.i
-
-.PHONY : src/caro_server.i
-
-# target to preprocess a source file
-src/caro_server.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/src/caro_server.c.i
-.PHONY : src/caro_server.c.i
-
-src/caro_server.s: src/caro_server.c.s
-
-.PHONY : src/caro_server.s
-
-# target to generate assembly for a file
-src/caro_server.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/src/caro_server.c.s
-.PHONY : src/caro_server.c.s
-
 src/handleDatabase.o: src/handleDatabase.c.o
 
 .PHONY : src/handleDatabase.o
@@ -401,9 +374,6 @@ help:
 	@echo "... src/caroGame.o"
 	@echo "... src/caroGame.i"
 	@echo "... src/caroGame.s"
-	@echo "... src/caro_server.o"
-	@echo "... src/caro_server.i"
-	@echo "... src/caro_server.s"
 	@echo "... src/handleDatabase.o"
 	@echo "... src/handleDatabase.i"
 	@echo "... src/handleDatabase.s"

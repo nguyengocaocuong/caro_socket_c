@@ -28,22 +28,6 @@ void readFileHistory() {
     fclose(file);
 }
 
-void readFileFriend() {
-    FILE *file = openFile(FILE_FRIEND, "r");
-    if (file == NULL) {
-        printf("Can't open file %s for read\n", FILE_FRIEND);
-        return;
-    }
-
-    char buff[MAX_LEN_BUFF + 1];
-    while (!feof(file)) {
-        fgets(buff, MAX_LEN_BUFF, file);
-        if (!feof(file))
-            buff[strlen(buff) - 1] = 0;
-        addList(createDataFriend(buff), TAG_FRIEND);
-    }
-    fclose(file);
-}
 
 void readFileAccount() {
     FILE *file = openFile(FILE_ACCOUNT, "r");
@@ -63,7 +47,6 @@ void readFileAccount() {
 
 void readAllFileDataBase() {
     readFileAccount();
-    readFileFriend();
     readFileHistory();
 }
 
@@ -74,9 +57,6 @@ void writeFileHistory(char *data) {
 }
 
 
-void writeFileFriend() {
-
-}
 
 void writeFileAccount(char *data) {
     FILE *file = openFile(FILE_ACCOUNT, "ab");

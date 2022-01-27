@@ -11,13 +11,9 @@ void readAllFileDataBase();
 
 void readFileHistory();
 
-void readFileFriend();
-
 void readFileAccount();
 
 void writeFileHistory(char *data);
-
-void writeFileFriend();
 
 void writeFileAccount(char *data);
 

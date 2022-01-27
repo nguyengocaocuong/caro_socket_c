@@ -45,6 +45,7 @@ typedef struct {
     GtkWidget *lbl_next_person;
     GtkWidget *fixed_main;
     GtkWidget *fixed_caro;
+    GtkWidget *box_notify;
     GtkWidget *scroll;
 } GameContainer;
 
@@ -95,4 +96,5 @@ typedef struct {
     char person[30];
 } UserData;
 
+UserData userData;
 #endif

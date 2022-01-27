@@ -106,7 +106,7 @@ void removeBySocketID(int sockID, int tag) {
                 preTmp = ((Client *) preTmp)->nextClient;
                 serverData.client = preTmp;
                 free(((Client *) tmp)->dataClient);
-                free(tmp);
+                free((Client *)tmp);
                 break;
             } else {
                 ((Client *) preTmp)->nextClient = ((Client *) tmp)->nextClient;
@@ -147,15 +147,9 @@ void *getBySockID(int sockId, int tag) {
 
 void setStatus(int sockId, int status){
     if (serverData.client == NULL) return ;
-    Client *tmp = serverData.client;
-    while (tmp != NULL) {
-        if (tmp->dataClient->sockFd == sockId){
-            printf("reset status for client\n");
-            tmp->dataClient->status = status;
-            return;
-        }
-        tmp = tmp->nextClient;
-    }
+    Client *tmp =  getBySockID(sockId,TAG_CLIENT);
+    if(tmp != NULL)
+        tmp->dataClient->status = CLIENT_STATUS_ON;
 }
 void *getBySockName(char *account, int tag) {
     if (tag != TAG_CLIENT) return NULL;

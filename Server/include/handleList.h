@@ -13,7 +13,7 @@ void removeBySocketID(int sockID, int tag);
 
 int isByAccount(const char *name, int tag);
 
-int isBySocketId(const int sockID, int tag);
+int isBySocketId(int sockID, int tag);
 
 int isClientAlreadyForNewGameByAccount(const char *account);
 
@@ -28,4 +28,5 @@ int isAccount(const char *account, char *password);
 void *cloneIns(void *ins, int tag);
 
 void setStatus(int sockFd, int status);
+
 #endif

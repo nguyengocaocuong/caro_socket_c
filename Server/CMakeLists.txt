@@ -7,7 +7,7 @@ find_package(Threads REQUIRED)
 
 set(MAIN main.c)
 include_directories(constant include)
-file(GLOB SOURCES "src/*.c" )
+file(GLOB SOURCES "src/*.c")
 add_executable(Server ${SOURCES} ${MAIN})
 target_link_libraries(Server Threads::Threads)
 

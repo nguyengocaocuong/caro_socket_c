@@ -12,7 +12,6 @@
 #include "constant.h"
 
 static void *multiModeHandleNewGame(void *argv) {
-    printf("Enter thread :\n");
     int selectStatus;
     char recvData[MAX_LEN_BUFF];
     int recvSize;
@@ -21,19 +20,16 @@ static void *multiModeHandleNewGame(void *argv) {
     struct timeval timeval;
     timeval.tv_sec = 10;
     timeval.tv_usec = 0;
-    int sock1 = gameStatus->client[0]->dataClient->sockFd;
-    int sock2 = gameStatus->client[1]->dataClient->sockFd;
-    int maxFd = sock1 > sock2 ? sock1 + 1 : sock2 + 1;
+    int sock1 = gameStatus->client[0]->dataClient->sockFd, sock2;
+    if (gameStatus->isMachine == NOT_MACHINE)
+        sock2 = gameStatus->client[1]->dataClient->sockFd;
+    int maxFd;
+    maxFd = gameStatus->isMachine == NOT_MACHINE ? sock1 > sock2 ? sock1 + 1 : sock2 + 1 : sock1;
     while (1) {
         FD_ZERO(&readFds);
-        if (gameStatus->client[0]->dataClient->status == CLIENT_STATUS_NOT_ALREADY)
-            FD_SET(sock1, &readFds);
-        else
-            pthread_exit(NULL);
-        if (gameStatus->client[1]->dataClient->status == CLIENT_STATUS_NOT_ALREADY)
+        FD_SET(sock1, &readFds);
+        if (gameStatus->isMachine == NOT_MACHINE)
             FD_SET(sock2, &readFds);
-        else
-            pthread_exit(NULL);
         selectStatus = select(maxFd, &readFds, NULL, NULL, NULL);
         if (selectStatus == -1) {
             printf("Break thread :\n");
@@ -54,7 +50,7 @@ static void *multiModeHandleNewGame(void *argv) {
                     free(dataRecv);
                 }
             }
-            if (FD_ISSET(sock2, &readFds)) {
+            if (gameStatus->isMachine == NOT_MACHINE && FD_ISSET(sock2, &readFds)) {
                 recvSize = recv(sock2, recvData, MAX_LEN_BUFF, 0);
                 recvData[recvSize] = 0;
                 if (recvSize > 0) {

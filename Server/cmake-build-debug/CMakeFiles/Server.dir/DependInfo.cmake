@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/ubuntu/Desktop/Caro/Server/main.c" "/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles/Server.dir/main.c.o"
   "/home/ubuntu/Desktop/Caro/Server/src/caroGame.c" "/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles/Server.dir/src/caroGame.c.o"
-  "/home/ubuntu/Desktop/Caro/Server/src/caro_server.c" "/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles/Server.dir/src/caro_server.c.o"
   "/home/ubuntu/Desktop/Caro/Server/src/handleDatabase.c" "/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles/Server.dir/src/handleDatabase.c.o"
   "/home/ubuntu/Desktop/Caro/Server/src/handleList.c" "/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles/Server.dir/src/handleList.c.o"
   "/home/ubuntu/Desktop/Caro/Server/src/handleServer.c" "/home/ubuntu/Desktop/Caro/Server/cmake-build-debug/CMakeFiles/Server.dir/src/handleServer.c.o"

@@ -1,0 +1,125 @@
+.fixed-main {
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    background-image: linear-gradient(to right, #3E5151, #DECBA4);
+}
+
+window {
+    background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+}
+
+.button {
+    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)
+}
+
+.button {
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.fixed-menu {
+
+}
+
+.entry-message {
+
+    border-radius: 25px;
+    color: #ffffff;
+    font-family: monospace;
+}
+
+.box-message {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.scroll {
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: none
+}
+
+.fixed-caro {
+    background-image: none;
+    background-color: aqua;
+}
+
+.btn-send {
+    background-image: linear-gradient(to right, #780206 0%, #061161 51%, #780206 100%)
+}
+
+.btn-send {
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 15px;
+}
+
+.btn-send:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.text-send-message {
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 15px;
+    background-color: #003cff;
+    border-radius: 30px;
+    padding: 5px 10px;
+    margin: 2px 3px 5px 3px;
+    box-shadow: rgba(33, 31, 31, 0.35) 0px 5px 15px;
+}
+
+.text-recv-message {
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 15px;
+    background-color: #003cff;
+    border-radius: 30px;
+    padding: 5px 10px;
+    margin: 2px 3px 5px 3px;
+    box-shadow: rgba(33, 31, 31, 0.35) 0px 5px 15px;
+}
+
+.grid-caro {
+    background-image: none;
+    background-color: #e0cdcd;
+    border: 5px solid blue;
+    box-shadow: rgb(178, 252, 227) 0px 2px 8px 0px;
+}
+
+.no-chose {
+    background-image: url("../screen/image/images.png");
+    border: 1px solid #00ffd5;
+}
+
+.x-chose {
+    background-image: url("../screen/image/x.png");
+    border: 1px solid #00ffd5;
+}
+
+.o-chose {
+    background-image: url("../screen/image/o.png");
+    border: 1px solid #00ffd5;
+}
+
+.x-win {
+    background-image: url("../screen/image/x_win.png");
+    border: 1px solid #001aff;
+}
+
+.o-win {
+    background-image: url("../screen/image/o_win.png");
+    border: 1px solid #001aff;
+}

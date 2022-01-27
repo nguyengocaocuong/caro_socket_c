@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Client.dir/exchange/src/clientHeper.c.o"
-  "CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o"
   "CMakeFiles/Client.dir/exchange/src/handleClient.c.o"
   "CMakeFiles/Client.dir/exchange/src/initClient.c.o"
   "CMakeFiles/Client.dir/main.c.o"
-  "CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o"
   "CMakeFiles/Client.dir/views/src/handleLogicGameScreen.c.o"
   "CMakeFiles/Client.dir/views/src/handleLogicHomeScreen.c.o"
   "CMakeFiles/Client.dir/views/src/handleLogicLoginScreen.c.o"

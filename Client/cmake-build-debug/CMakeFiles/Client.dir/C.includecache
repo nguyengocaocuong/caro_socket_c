@@ -8,9 +8,15 @@
 
 ../exchange/constant/constant.h
 
-../exchange/include/clientHeper.h
+../exchange/include/handleClient.h
 structData.h
 ../exchange/include/structData.h
+applicationScreen.h
+../exchange/include/applicationScreen.h
+styleScreen.h
+../exchange/include/styleScreen.h
+constant.h
+../exchange/include/constant.h
 
 ../exchange/include/structData.h
 
@@ -19,10 +25,6 @@ gtk/gtk.h
 -
 netinet/in.h
 -
-
-../views/include/handleLogicGameScreen.h
-applicationScreen.h
-../views/include/applicationScreen.h
 
 ../views/include/handleLogicMainScreen.h
 structData.h
@@ -34,25 +36,17 @@ applicationScreen.h
 gtk/gtk.h
 -
 
-/home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c
-stdlib.h
--
-stdio.h
--
-sys/socket.h
--
-string.h
--
-clientHeper.h
-/home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.h
-constant.h
-/home/ubuntu/Desktop/Caro/Client/exchange/src/constant.h
-handleLogicGameScreen.h
-/home/ubuntu/Desktop/Caro/Client/exchange/src/handleLogicGameScreen.h
-handleLogicMainScreen.h
-/home/ubuntu/Desktop/Caro/Client/exchange/src/handleLogicMainScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.c
 styleScreen.h
-/home/ubuntu/Desktop/Caro/Client/exchange/src/styleScreen.h
+-
+gtk/gtk.h
+-
+constant.h
+/home/ubuntu/Desktop/Caro/Client/views/src/constant.h
+handleLogicMainScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.h
+handleClient.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleClient.h
 
 /usr/include/atk-1.0/atk/atk-enum-types.h
 atk/atkversion.h

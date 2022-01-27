@@ -39,7 +39,6 @@
 #define PREFIX_ONLINE "$ONLINE"
 #define PREFIX_MESSAGE "$MESSAGE"
 #define PREFIX_CELL "$CELL"
-#define PREFIX_ADD_FRIEND "$ADD"
 #define PREFIX_NEW_GAME "$NEW_GAME"
 #define PREFIX_CLOSE "$CLOSE"
 #define PREFIX_ACCEPT_PLAY "$ACCEPT_PLAY"
@@ -55,7 +54,6 @@
 
 #define FILE_ACCOUNT "data/account.txt"
 #define FILE_HISTORY "data/history.txt"
-#define FILE_FRIEND "data/friend.txt"
 
 #endif
 

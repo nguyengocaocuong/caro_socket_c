@@ -9,7 +9,6 @@ void change_label_next_person(UserData *userData) {
 
 void gtk_main_quit_game(GtkWindow *window, UserData *userData) {
     send(userData->sockFd, PREFIX_END_GAME, MAX_LEN_BUFF, 0);
-    close(userData->sockFd);
     gtk_widget_hide(userData->gameApplication->gameContainer.window_game);
     gtk_widget_show(userData->gameApplication->mainContainer.window_main);
 //    gtk_main_quit();

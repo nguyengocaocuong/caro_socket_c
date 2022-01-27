@@ -6,6 +6,4 @@ typedef struct{
     char result[10];
     char date[50];
 }PersonHistory;
-
-
 #endif

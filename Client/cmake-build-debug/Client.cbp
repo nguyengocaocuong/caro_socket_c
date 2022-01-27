@@ -210,10 +210,6 @@
 			<Option target="Client"/>
 			<Option target="SOURCE_FILES"/>
 		</Unit>
-		<Unit filename="/home/ubuntu/Desktop/Caro/Client/exchange/src/communicateWithServer.c">
-			<Option target="Client"/>
-			<Option target="SOURCE_FILES"/>
-		</Unit>
 		<Unit filename="/home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c">
 			<Option target="Client"/>
 			<Option target="SOURCE_FILES"/>
@@ -224,10 +220,6 @@
 		</Unit>
 		<Unit filename="/home/ubuntu/Desktop/Caro/Client/main.c">
 			<Option target="Client"/>
-		</Unit>
-		<Unit filename="/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicAppScreen.c">
-			<Option target="Client"/>
-			<Option target="SOURCE_FILES"/>
 		</Unit>
 		<Unit filename="/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c">
 			<Option target="Client"/>

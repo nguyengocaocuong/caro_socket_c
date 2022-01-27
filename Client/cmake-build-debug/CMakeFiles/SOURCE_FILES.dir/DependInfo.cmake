@@ -5,10 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/ubuntu/Desktop/Caro/Client/exchange/src/clientHeper.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/exchange/src/clientHeper.c.o"
-  "/home/ubuntu/Desktop/Caro/Client/exchange/src/communicateWithServer.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/exchange/src/communicateWithServer.c.o"
   "/home/ubuntu/Desktop/Caro/Client/exchange/src/handleClient.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/exchange/src/handleClient.c.o"
   "/home/ubuntu/Desktop/Caro/Client/exchange/src/initClient.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/exchange/src/initClient.c.o"
-  "/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicAppScreen.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/views/src/handleLogicAppScreen.c.o"
   "/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicGameScreen.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/views/src/handleLogicGameScreen.c.o"
   "/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicHomeScreen.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/views/src/handleLogicHomeScreen.c.o"
   "/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicLoginScreen.c" "/home/ubuntu/Desktop/Caro/Client/cmake-build-debug/CMakeFiles/SOURCE_FILES.dir/views/src/handleLogicLoginScreen.c.o"

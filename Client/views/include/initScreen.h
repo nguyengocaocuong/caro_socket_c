@@ -8,10 +8,10 @@
 #include "handleLogicGameScreen.h"
 #include "handleLogicMainScreen.h"
 
-void initHomeScreen(UserData *userData);
-void initLoginScreen(UserData *userData);
-void initRegisterScreen(UserData *userData);
-void initGameScreen(UserData *userData);
-void initMainScreen(UserData *userData);
-void initApplication(UserData *userData);
+void initHomeScreen();
+void initLoginScreen();
+void initRegisterScreen();
+void initGameScreen();
+void initMainScreen();
+void initApplication();
 #endif

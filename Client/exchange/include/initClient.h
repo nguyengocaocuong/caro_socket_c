@@ -4,7 +4,7 @@
 #include <netinet/in.h>
 #include "applicationScreen.h"
 
-int initSocket(const char *address, int port, UserData *userData);
+int initSocket(const char *address, int port);
 
 char *getIpAddrFromSockAddr(struct sockaddr_in sockAddrIn);
 

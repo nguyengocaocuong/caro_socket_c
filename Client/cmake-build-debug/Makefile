@@ -186,36 +186,6 @@ exchange/src/clientHeper.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SOURCE_FILES.dir/build.make CMakeFiles/SOURCE_FILES.dir/exchange/src/clientHeper.c.s
 .PHONY : exchange/src/clientHeper.c.s
 
-exchange/src/communicateWithServer.o: exchange/src/communicateWithServer.c.o
-
-.PHONY : exchange/src/communicateWithServer.o
-
-# target to build an object file
-exchange/src/communicateWithServer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SOURCE_FILES.dir/build.make CMakeFiles/SOURCE_FILES.dir/exchange/src/communicateWithServer.c.o
-.PHONY : exchange/src/communicateWithServer.c.o
-
-exchange/src/communicateWithServer.i: exchange/src/communicateWithServer.c.i
-
-.PHONY : exchange/src/communicateWithServer.i
-
-# target to preprocess a source file
-exchange/src/communicateWithServer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SOURCE_FILES.dir/build.make CMakeFiles/SOURCE_FILES.dir/exchange/src/communicateWithServer.c.i
-.PHONY : exchange/src/communicateWithServer.c.i
-
-exchange/src/communicateWithServer.s: exchange/src/communicateWithServer.c.s
-
-.PHONY : exchange/src/communicateWithServer.s
-
-# target to generate assembly for a file
-exchange/src/communicateWithServer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/exchange/src/communicateWithServer.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SOURCE_FILES.dir/build.make CMakeFiles/SOURCE_FILES.dir/exchange/src/communicateWithServer.c.s
-.PHONY : exchange/src/communicateWithServer.c.s
-
 exchange/src/handleClient.o: exchange/src/handleClient.c.o
 
 .PHONY : exchange/src/handleClient.o
@@ -302,36 +272,6 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.c.s
 .PHONY : main.c.s
-
-views/src/handleLogicAppScreen.o: views/src/handleLogicAppScreen.c.o
-
-.PHONY : views/src/handleLogicAppScreen.o
-
-# target to build an object file
-views/src/handleLogicAppScreen.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SOURCE_FILES.dir/build.make CMakeFiles/SOURCE_FILES.dir/views/src/handleLogicAppScreen.c.o
-.PHONY : views/src/handleLogicAppScreen.c.o
-
-views/src/handleLogicAppScreen.i: views/src/handleLogicAppScreen.c.i
-
-.PHONY : views/src/handleLogicAppScreen.i
-
-# target to preprocess a source file
-views/src/handleLogicAppScreen.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SOURCE_FILES.dir/build.make CMakeFiles/SOURCE_FILES.dir/views/src/handleLogicAppScreen.c.i
-.PHONY : views/src/handleLogicAppScreen.c.i
-
-views/src/handleLogicAppScreen.s: views/src/handleLogicAppScreen.c.s
-
-.PHONY : views/src/handleLogicAppScreen.s
-
-# target to generate assembly for a file
-views/src/handleLogicAppScreen.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/views/src/handleLogicAppScreen.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SOURCE_FILES.dir/build.make CMakeFiles/SOURCE_FILES.dir/views/src/handleLogicAppScreen.c.s
-.PHONY : views/src/handleLogicAppScreen.c.s
 
 views/src/handleLogicGameScreen.o: views/src/handleLogicGameScreen.c.o
 
@@ -556,9 +496,6 @@ help:
 	@echo "... exchange/src/clientHeper.o"
 	@echo "... exchange/src/clientHeper.i"
 	@echo "... exchange/src/clientHeper.s"
-	@echo "... exchange/src/communicateWithServer.o"
-	@echo "... exchange/src/communicateWithServer.i"
-	@echo "... exchange/src/communicateWithServer.s"
 	@echo "... exchange/src/handleClient.o"
 	@echo "... exchange/src/handleClient.i"
 	@echo "... exchange/src/handleClient.s"
@@ -568,9 +505,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... views/src/handleLogicAppScreen.o"
-	@echo "... views/src/handleLogicAppScreen.i"
-	@echo "... views/src/handleLogicAppScreen.s"
 	@echo "... views/src/handleLogicGameScreen.o"
 	@echo "... views/src/handleLogicGameScreen.i"
 	@echo "... views/src/handleLogicGameScreen.s"
