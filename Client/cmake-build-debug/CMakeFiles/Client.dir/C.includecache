@@ -26,9 +26,7 @@ gtk/gtk.h
 netinet/in.h
 -
 
-../views/include/handleLogicMainScreen.h
-structData.h
-../views/include/structData.h
+../views/include/handleLogicRegisterScreen.h
 applicationScreen.h
 ../views/include/applicationScreen.h
 
@@ -36,15 +34,9 @@ applicationScreen.h
 gtk/gtk.h
 -
 
-/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.c
-styleScreen.h
--
-gtk/gtk.h
--
-constant.h
-/home/ubuntu/Desktop/Caro/Client/views/src/constant.h
-handleLogicMainScreen.h
-/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicMainScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.c
+handleLogicRegisterScreen.h
+/home/ubuntu/Desktop/Caro/Client/views/src/handleLogicRegisterScreen.h
 handleClient.h
 /home/ubuntu/Desktop/Caro/Client/views/src/handleClient.h
 

@@ -69,8 +69,9 @@ void handleRecvData(int sockFd) {
         writeFileAccount(data);
         addList(createDataAccount(data), TAG_ACCOUNT);
         Client *client = (Client *) getBySockID(sockFd, TAG_CLIENT);
-        strcpy(client->dataClient->name, account.account);
-        strcpy(client->dataClient->password, account.password);
+//        strcpy(client->dataClient->name, account.account);
+//        strcpy(client->dataClient->password, account.password);
+        client->dataClient->status = CLIENT_STATUS_OF;
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
         free(data);
         return;
@@ -83,6 +84,7 @@ void handleRecvData(int sockFd) {
         return;
     }
     if (strcmp(token, PREFIX_ONLINE) == 0) {
+        printf("get online person\n");
         char *sendData = makeSendDataOnlineAccount(sockFd);
         send(sockFd, sendData, MAX_LEN_BUFF, 0);
         free(tmp);

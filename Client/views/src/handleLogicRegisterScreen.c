@@ -3,7 +3,7 @@
 
 void gtk_main_quit_rs_login(GtkWindow *window) {
     send(userData.sockFd, PREFIX_CLOSE, MAX_LEN_BUFF, 0);
-    close(userData.sockFd);
+    close(userData.sockFd); 
     gtk_main_quit();
 }
 
