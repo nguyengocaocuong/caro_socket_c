@@ -3,7 +3,7 @@
 
 #include "applicationScreen.h"
 /**
- *
+ * Hàm này xử lý close cửa sổ window hame
  * @param window
  */
 void gtk_main_quit_game(GtkWindow *window);

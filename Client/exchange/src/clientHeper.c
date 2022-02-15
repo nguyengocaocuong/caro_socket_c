@@ -123,13 +123,7 @@ char *separationDataMessage(char *dataMessage) {
     return message;
 }
 
-char *separationDataAddFriend(char *dataRecv) {
-    char *token = strtok(dataRecv, SEPARATOR);
-    token = strtok(NULL, SEPARATOR);
-    char *account = (char *) calloc(1, MAX_LEN_BUFF);
-    strcpy(account, token);
-    return account;
-}
+
 char *separationDataAcceptPlay(char *dataRecv){
     char *token = strtok(dataRecv, SEPARATOR);
     token = strtok(NULL, SEPARATOR);

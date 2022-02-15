@@ -4,10 +4,10 @@
 #include <netinet/in.h>
 #include "applicationScreen.h"
 /**
- *
- * @param address
- * @param port
- * @return
+ * Hàm này khởi tạo socket kết nối lên server
+ * @param address : địa chỉ server
+ * @param port : cổng server hoạt động
+ * @return trả về socketID
  */
 int initSocket(const char *address, int port);
 /**

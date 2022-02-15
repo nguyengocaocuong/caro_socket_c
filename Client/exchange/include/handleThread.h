@@ -6,7 +6,7 @@
 #include "constant.h"
 #include "handleLogicGameScreen.h"
 /**
- *
+ * hàm này xử việc nhận thông không đồng bộ từ server
  * @return
  */
 static void *multiModeHandle() {
@@ -42,4 +42,3 @@ static void *multiModeHandle() {
 }
 
 #endif
-
