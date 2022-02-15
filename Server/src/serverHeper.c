@@ -3,7 +3,6 @@
 #include <time.h>
 #include <string.h>
 #include "serverHeper.h"
-#include "initServer.h"
 #include "constant.h"
 #include "handleList.h"
 
@@ -11,16 +10,12 @@ void writeLog(const Client *client, char *sendData, char *tag) {
     printf("%5s%25s : %s\n", tag, client->dataClient->name, sendData);
 }
 
-char *makeSendDataNextGameStatus(int row, int col) {
-
-    return NULL;
-}
 
 char *makeSendDataHistory(int sockId) {
     char *sendData = (char *) calloc(1, MAX_LEN_BUFF);
     strcat(sendData, PREFIX_HISTORY);
     History *tmp = serverData.history;
-    Client *currentClient = (Client *) getBySockID(sockId, TAG_CLIENT);
+    Client *currentClient = (Client *) getBySockID(sockId);
 
     while (tmp != NULL) {
         if (strcmp(tmp->dataHistory->firstAccount, currentClient->dataClient->name) == 0) {
@@ -37,7 +32,7 @@ char *makeSendDataHistory(int sockId) {
 }
 
 char *makeSendDataOnlineAccount(int sockId) {
-    Client *currentClient = getBySockID(sockId, TAG_CLIENT);
+    Client *currentClient = getBySockID(sockId);
     char *sendData = (char *) calloc(1, MAX_LEN_BUFF);
     strcat(sendData, PREFIX_ONLINE);
     Client *tmp = serverData.client;

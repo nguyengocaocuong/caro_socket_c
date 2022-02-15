@@ -93,8 +93,7 @@ void freeList(int tag) {
 
 }
 
-void removeBySocketID(int sockID, int tag) {
-    if (tag != TAG_CLIENT) return;
+void removeBySocketID(int sockID) {
     void *tmp = NULL;
     void *preTmp = NULL;
     if (serverData.client == NULL) return;
@@ -133,8 +132,7 @@ void *cloneIns(void *ins, int tag) {
     return NULL;
 }
 
-void *getBySockID(int sockId, int tag) {
-    if (tag != TAG_CLIENT) return NULL;
+void *getBySockID(int sockId) {
     if (serverData.client == NULL) return NULL;
     Client *tmp = serverData.client;
     while (tmp != NULL) {
@@ -147,12 +145,11 @@ void *getBySockID(int sockId, int tag) {
 
 void setStatus(int sockId, int status){
     if (serverData.client == NULL) return ;
-    Client *tmp =  getBySockID(sockId,TAG_CLIENT);
+    Client *tmp =  getBySockID(sockId);
     if(tmp != NULL)
         tmp->dataClient->status = CLIENT_STATUS_ON;
 }
-void *getBySockName(char *account, int tag) {
-    if (tag != TAG_CLIENT) return NULL;
+void *getBySockName(char *account) {
     if (serverData.client == NULL) return NULL;
     Client *tmp = serverData.client;
     while (tmp != NULL) {

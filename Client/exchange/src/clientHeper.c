@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 #include "constant.h"
 #include "clientHeper.h"
@@ -12,7 +11,7 @@ char *makeSendDataLogin(char *accountName, char *password) {
     strcat(sendBuff, accountName);
     strcat(sendBuff, SEPARATOR);
     strcat(sendBuff, password);
-
+    if(sendBuff[strlen(sendBuff)] == '\n') sendBuff[strlen(sendBuff)] = 0;
     return sendBuff;
 }
 
@@ -27,13 +26,6 @@ char *makeSendDataRegister(char *accountName, char *password) {
     return sendBuff;
 }
 
-char *makeSendDataRAddFriend(char *accountName) {
-    char *sendBuff = (char *) calloc(1, MAX_LEN_BUFF);
-    strcat(sendBuff, PREFIX_ADD_FRIEND);
-    strcat(sendBuff, SEPARATOR);
-    strcat(sendBuff, accountName);
-    return sendBuff;
-}
 
 char* makeSendDataAcceptPlay(char *account) {
     char *sendBuff = (char*) calloc(1,MAX_LEN_BUFF);

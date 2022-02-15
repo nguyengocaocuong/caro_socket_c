@@ -26,10 +26,12 @@ void handleRecvData(int sockFd) {
     printf("%s\n", recvData);
     char *tmp = (char *) calloc(1, MAX_LEN_BUFF);
     strcpy(tmp, recvData);
+
+    //Lấy ra prefix
     char *token = strtok(tmp, SEPARATOR);
     if (recvSize <= 0) return;
     if (strcmp(token, PREFIX_CLOSE) == 0) {
-        removeBySocketID(sockFd, TAG_CLIENT);
+        removeBySocketID(sockFd);
         close(sockFd);
         free(tmp);
         return;
@@ -37,20 +39,28 @@ void handleRecvData(int sockFd) {
     if (strcmp(token, PREFIX_LOGIN) == 0) {
         DataAccount dataAccount;
         separationDataLogin(recvData, &dataAccount);
+
+        //Nếu không tồn tại tài khoản, hoặc tài khoản đã đăng nhập thì thông báo đăng nhập không thành công
         if (isAccount(dataAccount.account, dataAccount.password) ||
-            getBySockName(dataAccount.account, TAG_CLIENT) != NULL) {
+            getBySockName(dataAccount.account) != NULL) {
             send(sockFd, PREFIX_FAIL, MAX_LEN_BUFF, 0);
             free(tmp);
             return;
         }
-        Client *client = (Client *) getBySockID(sockFd, TAG_CLIENT);
+
+        Client *client = (Client *) getBySockID(sockFd);
+
+        //Nếu tài khoản đã đăng nhập thì thông báo đăng nhập không thành công
         if (client->dataClient->status == CLIENT_STATUS_ON) {
             send(sockFd, PREFIX_FAIL, MAX_LEN_BUFF, 0);
             free(tmp);
             return;
         }
+
+        //Copy thông tin clinet vào cấu trúc lưu trữ thông tin client
         strcpy(client->dataClient->name, dataAccount.account);
         strcpy(client->dataClient->password, dataAccount.password);
+        //Đặt lại trạng thái của client
         client->dataClient->status = CLIENT_STATUS_ON;
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
         free(tmp);
@@ -65,13 +75,14 @@ void handleRecvData(int sockFd) {
         strcat(data, account.password);
 
         // kiem tra tai khoan
+
         printf("%s\n", data);
         writeFileAccount(data);
         addList(createDataAccount(data), TAG_ACCOUNT);
-        Client *client = (Client *) getBySockID(sockFd, TAG_CLIENT);
-//        strcpy(client->dataClient->name, account.account);
-//        strcpy(client->dataClient->password, account.password);
-        client->dataClient->status = CLIENT_STATUS_OF;
+        Client *client = (Client *) getBySockID(sockFd);
+        strcpy(client->dataClient->name, account.account);
+        strcpy(client->dataClient->password, account.password);
+        client->dataClient->status = CLIENT_STATUS_ON;
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
         free(data);
         return;
@@ -92,10 +103,13 @@ void handleRecvData(int sockFd) {
         return;
     }
     if (strcmp(token, PREFIX_NEW_GAME) == 0) {
+        //Nếu yêu cầu là chơi với máy thì yêu cầu được chấp thuận ngay lập tức
         if (strlen(recvData) <= 10) {
             send(sockFd, PREFIX_PLAY, MAX_LEN_BUFF, 0);
             GameStatus gameStatus;
-            gameStatus.client[0] = getBySockID(sockFd, TAG_CLIENT);
+            gameStatus.client[0] = getBySockID(sockFd);
+
+            //Cập nhật lại trạng thái của client là đang chơi
             gameStatus.client[0]->dataClient->status = CLIENT_STATUS_NOT_ALREADY;
             gameStatus.isMachine = IS_MACHINE;
             for (int i = 0; i < 15; ++i)
@@ -113,6 +127,8 @@ void handleRecvData(int sockFd) {
             pthread_attr_setschedparam(&attr, &schedParam);
 
             pthread_t pthreadId;
+
+            //tạo luồng xử lý cho ván game
             ret = pthread_create(&pthreadId, &attr, multiModeHandleNewGame, &gameStatus);
             if (ret) {
                 printf("pthread_create() error number=%d\n", ret);
@@ -120,31 +136,35 @@ void handleRecvData(int sockFd) {
             }
             free(tmp);
             return;
-        } else {
+        }
+        else {
+            //Lấy thông tin của đối phương, người được yêu cầu chơi game
             char *account = separationDataNewGame(recvData);
-            Client *client = getBySockName(account, TAG_CLIENT);
-            if (client != NULL) {
-                Client *requestClient = getBySockID(sockFd, TAG_CLIENT);
+            Client *client = getBySockName(account);
+            //Nếu đối phương sẵn sàng cho một ván game, thì gửi yêu cầu đến đối phương
+            if (client != NULL || client->dataClient->status != CLIENT_STATUS_NOT_ALREADY) {
+                Client *requestClient = getBySockID(sockFd);
                 char *sendData = makeSendDataNewGame(requestClient->dataClient->name);
                 send(client->dataClient->sockFd, sendData, MAX_LEN_BUFF, 0);
                 free(sendData);
-                free(account);
             }
+            free(account);
         }
         free(tmp);
         return;
     }
     if (strcmp(token, PREFIX_ACCEPT_PLAY) == 0) {
         char *account = separationDataAcceptPlay(recvData);
-        Client *client = getBySockName(account, TAG_CLIENT);
+        Client *client = getBySockName(account);
         if (client == NULL) {
             send(sockFd, PREFIX_FAIL_REQUEST_NEW_GAME, MAX_LEN_BUFF, 0);
             printf("%s\n", PREFIX_FAIL_REQUEST_NEW_GAME);
             return;
         }
-        Client *requestClient = getBySockID(sockFd, TAG_CLIENT);
+        Client *requestClient = getBySockID(sockFd);
         char *sendDataClient = makeSendDataAcceptPlay(requestClient->dataClient->name);
 
+        //Thông báo đến người chơi yêu cầu chơi game của họ đã được đồng ý
         send(sockFd, PREFIX_PLAY, MAX_LEN_BUFF, 0);
         send(client->dataClient->sockFd, sendDataClient, MAX_LEN_BUFF, 0);
 
@@ -154,9 +174,12 @@ void handleRecvData(int sockFd) {
         printf("%s\n", sendData);
         send(client->dataClient->sockFd, sendData, MAX_LEN_BUFF, 0);
 
+        //Khởi tạo thông tin của ván game
         GameStatus gameStatus;
         gameStatus.client[0] = client;
         gameStatus.client[1] = requestClient;
+
+        //cập nhật trạng thái của client
         gameStatus.client[0]->dataClient->status = CLIENT_STATUS_NOT_ALREADY;
         gameStatus.client[1]->dataClient->status = CLIENT_STATUS_NOT_ALREADY;
         gameStatus.isMachine = NOT_MACHINE;
@@ -176,6 +199,7 @@ void handleRecvData(int sockFd) {
         pthread_attr_setschedparam(&attr, &schedParam);
 
         pthread_t pthreadId;
+        //tạo luồng xử lý cho ván game
         ret = pthread_create(&pthreadId, &attr, multiModeHandleNewGame, &gameStatus);
         if (ret) {
             printf("pthread_create() error number=%d\n", ret);
@@ -199,6 +223,7 @@ void updateNewReadFds() {
 
     serverData.maxFd = serverData.listenFD;
     while (tmp != NULL) {
+        //Chỉ những client có trạng thái khác với trạng thái CLIENT_STATUS_NOT_ALREADY mới được server lắng nghe, bởi vì các client ở trạng thái này đang ở trong ván game
         if (tmp->dataClient->status != CLIENT_STATUS_NOT_ALREADY) {
             tmpSockFd = tmp->dataClient->sockFd;
             FD_SET(tmpSockFd, &(serverData.readFds));
@@ -220,9 +245,12 @@ void handleAcceptConnect() {
 }
 
 void handleSelect() {
+    //Có hai kiểu socket được lắng nghe , là socket để chấp nhận kết nối đến, và các socjket của các client đã kết nối
     for (int i = 0; i < serverData.maxFd; ++i)
         if (FD_ISSET(i, &(serverData.readFds))) {
+            //Nếu socket nhận được dữ liệu là socket của server dùng để lắng nghe kết nối
             if (i == serverData.listenFD) handleAcceptConnect();
+            //Ngược lại là socket kết nối với client
             else handleRecvData(i);
         }
 }
@@ -240,15 +268,17 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
     if (strcmp(token, PREFIX_CELL) == 0) {
         int row = recvData[6] - '0';
         int col = recvData[8] - '0';
+        //Nếu ván game này là ván chơi giữa hai người
         if (gameStatus->isMachine == NOT_MACHINE) {
             gameStatus->gridGame[col][row] = requestSockFd > otherSockFd ? X_ICON : O_ICON;
             int *winIndex[5];
-
+            //Gửi nước đi của client này cho client kia
             send(otherSockFd, recvData, MAX_LEN_BUFF, 0);
 
+            //Kiểm tra trạng thái ván game
             if (checkStatusGame(gameStatus, col, row, winIndex) == GAME_STATUS_WIN) {
-                Client *winClient = getBySockID(requestSockFd, TAG_CLIENT);
-                Client *lostClient = getBySockID(otherSockFd, TAG_CLIENT);
+                Client *winClient = getBySockID(requestSockFd);
+                Client *lostClient = getBySockID(otherSockFd);
                 char *history = (char *) calloc(1, MAX_LEN_BUFF);
                 char *currentTime = getCurrentTime();
                 char *sendWin = makeSendDataWinGame(winIndex);
@@ -275,14 +305,15 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
             }
             free(tmp);
             return;
-        } else {
+        }
+        else {
             printf("Den luot server\n");
             free(tmp);
             return;
         }
     }
     if (strcmp(token, PREFIX_CLOSE) == 0) {
-        removeBySocketID(requestSockFd, TAG_CLIENT);
+        removeBySocketID(requestSockFd);
         pthread_exit(NULL);
     }
     if (strcmp(token, PREFIX_END_GAME) == 0) {

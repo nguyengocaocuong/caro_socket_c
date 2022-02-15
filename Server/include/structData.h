@@ -68,13 +68,28 @@ typedef struct {
     int test;
 } GameStatus;
 
-
+/**
+ * Hàm này có chức năng tạo mới một Client với dữ liệu có được
+ * @param sockFd : socket kết nối tới client
+ * @param clientAddr : địa chỉ của client
+ * @return : con trỏ đến client được tạo ra
+ */
 DataClient *createDataClient(int sockFd, struct sockaddr_in clientAddr);
 
+/**
+ * Hàm này có chức năng tạo ra một phần tử lưu trữ lịch sử thi đấu
+ * @param data : lịch sử ván đấu
+ * @return : con trỏ đến phần tử được tạo
+ */
 DataHistory *createDataHistory(char *data);
 
+/**
+ * Hàm này tạo ra một phần tử lưu trữ thông tin của một tài khoản
+ * @param data : thông tin tài khoản
+ * @return : con trỏ đến phần tử lưu trữ thông tin tài khoản được tạo
+ */
 DataAccount *createDataAccount(char *data);
 
-
+// Dữ liệu lưu trữ mọi data của server
 ServerData serverData;
 #endif

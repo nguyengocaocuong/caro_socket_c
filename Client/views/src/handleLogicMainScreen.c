@@ -165,14 +165,6 @@ void on_add_notify(GtkWidget *notify) {
     gtk_box_pack_start(GTK_BOX(userData.gameApplication->mainContainer.box_notify), notify, FALSE, FALSE, 0);
 }
 
-void on_click_add_friend_no(GtkButton *button) {
-    printf("Khong dong y ket ban!\n");
-}
-
-void on_click_add_friend_ok(GtkButton *button) {
-    printf("Dong y ket ban!\n");
-}
-
 void on_click_new_game_no(GtkButton *button) {
     printf("Khong dong y choi!\n");
 }

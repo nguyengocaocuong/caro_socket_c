@@ -4,7 +4,6 @@
 #include "initServer.h"
 #include "constant.h"
 #include "handleDatabase.h"
-
 int initServer(char *port) {
     serverData.client = NULL;
     serverData.account = NULL;

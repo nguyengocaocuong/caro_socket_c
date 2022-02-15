@@ -6,16 +6,6 @@
 int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
     int win[5][2];
     int index = 0;
-//    printf("==================\n");
-//    printf("New Status Game:\n");
-//    for (int i = 0; i < 15; ++i) {
-//        for (int j = 0; j < 15; ++j) {
-//            printf("[%c]", gameStatus->gridGame[i][j] == 0 ? '_' : '0' + gameStatus->gridGame[i][j]);
-//        }
-//        printf("\n");
-//    }
-//    printf("==================\n");
-//    printf("Check game : row(%d) col(%d)\n", row, col);
     int cl = col;
     int rl = row;
     win[index][0] = row;

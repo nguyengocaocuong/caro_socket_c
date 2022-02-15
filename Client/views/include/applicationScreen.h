@@ -9,6 +9,7 @@ typedef struct {
     GtkWidget *btn_login;
     GtkWidget *btn_register;
 } HomeContainer;
+
 typedef struct {
     GtkWidget *window_login;
     GtkWidget *btn_sign_in;
@@ -96,5 +97,6 @@ typedef struct {
     char person[30];
 } UserData;
 
+//Cấu trúc lưu trữ thông tin của một client, xuyên suốt toàn project
 UserData userData;
 #endif

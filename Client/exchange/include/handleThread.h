@@ -5,7 +5,10 @@
 #include "clientError.h"
 #include "constant.h"
 #include "handleLogicGameScreen.h"
-
+/**
+ *
+ * @return
+ */
 static void *multiModeHandle() {
     printf("Enter thread :\n");
     int selectStatus;
@@ -24,7 +27,6 @@ static void *multiModeHandle() {
             pthread_exit(NULL);
         } else if (selectStatus == 0) {
             printf("Het thoi gian cho!\n");
-            show_dialog_time_out(userData);
             printf("Break thread :\n");
             pthread_exit(NULL);
         } else {

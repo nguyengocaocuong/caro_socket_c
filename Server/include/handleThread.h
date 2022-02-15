@@ -10,7 +10,11 @@
 #include "handleServer.h"
 #include "structData.h"
 #include "constant.h"
-
+/**
+ * Hàm này là hàm xử lí nó như hàm main trong luồng con, xử lý một ván game
+ * @param argv : tham số truyền vào cho hàm này, khi khởi tạo luồng, nó chính là thông tin trạng thái của ván game
+ * @return
+ */
 static void *multiModeHandleNewGame(void *argv) {
     int selectStatus;
     char recvData[MAX_LEN_BUFF];

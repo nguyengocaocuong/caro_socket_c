@@ -59,7 +59,6 @@ void viewListOnlineAccount(int sockFd) {
 
 void sendMessage(char *message, int sockFd) {
     char *sendData = makeSendDataMessage(message);
-
     send(sockFd, sendData, MAX_LEN_BUFF, 0);
     printf("%s\n", sendData);
     if (sendData != NULL)
@@ -67,9 +66,9 @@ void sendMessage(char *message, int sockFd) {
 }
 
 void sendRequestNewGame(char *account, int sockFd) {
-    if(account == NULL || strlen(account) < 1){
+    if (account == NULL || strlen(account) < 1) {
         send(sockFd, "$NEW_GAME#", MAX_LEN_BUFF, 0);
-        strcpy(userData.person,"Máy");
+        strcpy(userData.person, "Máy");
         return;
     }
     char *sendData = makeSendDataNewGame(account);
@@ -86,7 +85,6 @@ void sendNextGameStatus(int row, int col, int sockFd) {
     if (sendData != NULL)
         free(sendData);
 }
-
 
 
 void handleRecvData(char *dataRecv) {
@@ -194,9 +192,10 @@ void handleRecvData(char *dataRecv) {
         return;
     }
     if (strcmp(token, PREFIX_PLAY) == 0) {
-        printf("You play first\n");
+//        printf("You play first\n");
         userData.icon = X_ICON;
         userData.isNext = NEXT_YOU;
+        gtk_label_set_text(GTK_LABEL(userData.gameApplication->gameContainer.lbl_next_person), "bạn");
         pthread_mutex_t counter_mutex = PTHREAD_MUTEX_INITIALIZER;
         pthread_mutex_lock(&counter_mutex);
         gtk_widget_set_opacity(userData.gameApplication->mainContainer.start, 1);
@@ -209,34 +208,36 @@ void handleRecvData(char *dataRecv) {
 
     if (strcmp(token, PREFIX_WIN) == 0) {
         userData.isNext = END_GAME;
-        set_label_status_game( "Bạn thắng");
-        set_win_cell(dataRecv[7] - '0',dataRecv[5]- '0', 2);
-        set_win_cell(dataRecv[11] - '0',dataRecv[9]- '0', 2);
-        set_win_cell(dataRecv[15] - '0',dataRecv[13]- '0', 2);
-        set_win_cell(dataRecv[19] - '0',dataRecv[17]- '0', 2);
-        set_win_cell(dataRecv[23] - '0',dataRecv[21]- '0',2);
+        set_label_status_game("Bạn thắng");
+        set_win_cell(dataRecv[7] - '0', dataRecv[5] - '0', 2);
+        set_win_cell(dataRecv[11] - '0', dataRecv[9] - '0', 2);
+        set_win_cell(dataRecv[15] - '0', dataRecv[13] - '0', 2);
+        set_win_cell(dataRecv[19] - '0', dataRecv[17] - '0', 2);
+        set_win_cell(dataRecv[23] - '0', dataRecv[21] - '0', 2);
         if (tmp != NULL)
             free(tmp);
         return;
     }
 
     if (strcmp(token, PREFIX_LOST) == 0) {
+        userData.isNext = END_GAME;
         set_label_status_game("Bạn thua");
-        set_win_cell(dataRecv[8] - '0',dataRecv[6]- '0', 1);
-        set_win_cell(dataRecv[12] - '0',dataRecv[10]- '0', 1);
-        set_win_cell(dataRecv[16] - '0',dataRecv[14]- '0', 1);
-        set_win_cell(dataRecv[20] - '0',dataRecv[18]- '0', 1);
-        set_win_cell(dataRecv[24] - '0',dataRecv[22]- '0', 1);
+        set_win_cell(dataRecv[8] - '0', dataRecv[6] - '0', 1);
+        set_win_cell(dataRecv[12] - '0', dataRecv[10] - '0', 1);
+        set_win_cell(dataRecv[16] - '0', dataRecv[14] - '0', 1);
+        set_win_cell(dataRecv[20] - '0', dataRecv[18] - '0', 1);
+        set_win_cell(dataRecv[24] - '0', dataRecv[22] - '0', 1);
         userData.isNext = END_GAME;
         if (tmp != NULL)
             free(tmp);
         return;
     }
-    if(strcmp(token,PREFIX_END_GAME) == 0){
-        gtk_widget_set_opacity(userData.gameApplication->gameContainer.box_notify,1);
+    if (strcmp(token, PREFIX_END_GAME) == 0) {
+        userData.isNext = END_GAME;
+        gtk_widget_set_opacity(userData.gameApplication->gameContainer.box_notify, 1);
         initGameScreen();
-        gtk_widget_set_opacity(userData.gameApplication->mainContainer.start,0);
-        gtk_entry_set_text(GTK_ENTRY(userData.gameApplication->mainContainer.entry_account),"");
+        gtk_widget_set_opacity(userData.gameApplication->mainContainer.start, 0);
+        gtk_entry_set_text(GTK_ENTRY(userData.gameApplication->mainContainer.entry_account), "");
     }
 }
 

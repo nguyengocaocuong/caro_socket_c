@@ -3,9 +3,17 @@
 
 #include "structData.h"
 #include "applicationScreen.h"
-
+/**
+ *
+ * @param personHistory
+ * @param size
+ */
 void on_show_history(PersonHistory *personHistory, int size);
-
+/**
+ *
+ * @param personHistory
+ * @param size
+ */
 void on_show_online(PersonHistory *personHistory, int size);
 
 void on_history_clicked(GtkButton *button);
@@ -27,10 +35,6 @@ void on_request_clicked(GtkButton *button);
 void on_notify_clicked(GtkButton *button);
 
 void on_add_notify(GtkWidget *notify);
-
-void on_click_add_friend_no(GtkButton *button);
-
-void on_click_add_friend_ok(GtkButton *button);
 
 void on_click_new_game_ok(GtkButton *button);
 

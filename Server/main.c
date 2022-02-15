@@ -9,20 +9,20 @@ int main(int argc, char *argv[]) {
 //        printf("Can't create socket!\n");
 //        return -1;
 //    }
-struct timeval timeval;
+    struct timeval timeval;
 
     initServer(argv[1]);
     while (1) {
         timeval.tv_sec = 2;
         timeval.tv_usec = 0;
+        //sau 2s cập nhật lại danh sách lắng nghe một lần, bởi vì sẽ có nhưng client thoát khỏi ván game, và trở lại luồng chính
         updateNewReadFds();
         int selectStatus = select(serverData.maxFd, &(serverData.readFds), NULL, NULL, &timeval);
         if (selectStatus == -1) {
             printf("Close server :\n");
             break;
-        }else if(selectStatus == 0){
-        }
-        else {
+        } else if (selectStatus == 0) {
+        } else {
             handleSelect(&serverData);
         }
     }

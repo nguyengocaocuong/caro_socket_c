@@ -34,6 +34,7 @@ void clear_entry_message() {
 }
 
 void on_clicked_game_send(GtkButton *button) {
+    if(userData.isNext == END_GAME) return;
     const gchar *message = gtk_entry_get_text(GTK_ENTRY(userData.gameApplication->gameContainer.entry_message));
     if (message == NULL || strlen(message) == 0) return;
     sendMessage((char *) message,
@@ -99,7 +100,7 @@ void on_clicked_set_cell(int row, int col) {
 
 void set_win_cell(int row, int col, int tag) {
     GtkWidget *button = gtk_grid_get_child_at(GTK_GRID(userData.gameApplication->gameContainer.grid_caro), row, col);
-    userData.isNext = NEXT_YOU;
+    if(userData.isNext != END_GAME) userData.isNext = NEXT_YOU;
     change_label_next_person();
     if (tag == 2) {
         remove_class(button, userData.icon == X_ICON ? "x-chose" : "o-chose");
@@ -110,13 +111,6 @@ void set_win_cell(int row, int col, int tag) {
     }
 }
 
-void show_dialog_time_out() {
-    GtkWidget *dialog = gtk_dialog_new();
-    gtk_window_set_title(GTK_WINDOW(dialog), "Test");
-    gtk_widget_set_size_request(GTK_WIDGET(dialog), 200, 200);
-    gtk_window_set_transient_for(GTK_WINDOW(dialog), GTK_WINDOW(userData.gameApplication->gameContainer.window_game));
-    gtk_widget_show(GTK_WIDGET(dialog));
-}
 
 void set_label_status_game(char *status) {
     gtk_label_set_text(GTK_LABEL(userData.gameApplication->gameContainer.lbl_status_game), status);

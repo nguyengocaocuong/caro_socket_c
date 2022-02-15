@@ -12,41 +12,15 @@
 structData.h
 ../include/structData.h
 
-../include/handleDatabase.h
-stdio.h
--
-constant.h
-../include/constant.h
-structData.h
-../include/structData.h
-
 ../include/handleList.h
 structData.h
 ../include/structData.h
 
-../include/handleServer.h
+../include/initServer.h
 structData.h
 ../include/structData.h
-constant.h
-../include/constant.h
-
-../include/handleThread.h
-stdio.h
--
-sys/select.h
--
-pthread.h
--
-stdlib.h
--
-string.h
--
-handleServer.h
-../include/handleServer.h
-structData.h
-../include/structData.h
-constant.h
-../include/constant.h
+caroGame.h
+../include/caroGame.h
 
 ../include/serverHeper.h
 structData.h
@@ -56,17 +30,21 @@ structData.h
 arpa/inet.h
 -
 
-/home/ubuntu/Desktop/Caro/Server/src/handleServer.c
-unistd.h
+/home/ubuntu/Desktop/Caro/Server/src/serverHeper.c
+stdlib.h
 -
-caroGame.h
-/home/ubuntu/Desktop/Caro/Server/src/caroGame.h
-handleDatabase.h
-/home/ubuntu/Desktop/Caro/Server/src/handleDatabase.h
+stdio.h
+-
+time.h
+-
+string.h
+-
 serverHeper.h
 /home/ubuntu/Desktop/Caro/Server/src/serverHeper.h
+initServer.h
+/home/ubuntu/Desktop/Caro/Server/src/initServer.h
+constant.h
+/home/ubuntu/Desktop/Caro/Server/src/constant.h
 handleList.h
 /home/ubuntu/Desktop/Caro/Server/src/handleList.h
-handleThread.h
-/home/ubuntu/Desktop/Caro/Server/src/handleThread.h
 
