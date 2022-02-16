@@ -9,9 +9,8 @@ int main(int argc, char *argv[]) {
         printf("Can't create socket!\n");
         return -1;
     }
-    struct timeval timeval;
 
-//    initServer(argv[1]);
+    struct timeval timeval;
     while (1) {
         timeval.tv_sec = 2;
         timeval.tv_usec = 0;

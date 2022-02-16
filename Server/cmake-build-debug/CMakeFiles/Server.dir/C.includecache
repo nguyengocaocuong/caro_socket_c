@@ -12,11 +12,13 @@
 structData.h
 ../include/structData.h
 
-../include/handleServer.h
-structData.h
-../include/structData.h
+../include/handleDatabase.h
+stdio.h
+-
 constant.h
 ../include/constant.h
+structData.h
+../include/structData.h
 
 ../include/initServer.h
 structData.h
@@ -24,21 +26,21 @@ structData.h
 caroGame.h
 ../include/caroGame.h
 
-../include/serverHeper.h
-structData.h
-../include/structData.h
-
 ../include/structData.h
 arpa/inet.h
 -
 
-/home/ubuntu/Desktop/Caro/Server/main.c
-stdio.h
+/home/ubuntu/Desktop/Caro/Server/src/initServer.c
+sys/socket.h
 -
-serverHeper.h
+stdlib.h
+-
+netdb.h
 -
 initServer.h
-/home/ubuntu/Desktop/Caro/Server/initServer.h
-handleServer.h
-/home/ubuntu/Desktop/Caro/Server/handleServer.h
+/home/ubuntu/Desktop/Caro/Server/src/initServer.h
+constant.h
+/home/ubuntu/Desktop/Caro/Server/src/constant.h
+handleDatabase.h
+/home/ubuntu/Desktop/Caro/Server/src/handleDatabase.h
 
