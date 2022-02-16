@@ -19,6 +19,6 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *windIndex[]);
  * @param row : chỉ số hàng tìm được
  * @param col : chỉ số cột tìm được
  */
-void getNextCell(int matrix[15][15],int currentCell, int *row, int *col);
+void getNextCell(int matrix[15][15], int *row, int *col);
 
 #endif

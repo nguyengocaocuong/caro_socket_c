@@ -11,10 +11,10 @@ int initServer(char *port) {
     serverData.history = NULL;
     serverData.serverAddr.sin_family = AF_INET;
     serverData.serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-//    serverData.serverAddr.sin_port = htons(atoi(port));
+    serverData.serverAddr.sin_port = htons(atoi(port));
 
 //run bug
-    serverData.serverAddr.sin_port = htons(5500);
+//    serverData.serverAddr.sin_port = htons(5501);
     serverData.listenFD = socket(AF_INET, SOCK_STREAM, 0);
     bind(serverData.listenFD, (struct sockaddr *) &(serverData.serverAddr), sizeof(serverData.serverAddr));
     listen(serverData.listenFD, MAX_ACCEPT_CLIENT);

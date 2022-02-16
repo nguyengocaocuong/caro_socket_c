@@ -102,6 +102,7 @@ void handleRecvData(char *dataRecv) {
     if (strcmp(token, PREFIX_CELL) == 0) {
         int row, col;
         separationDataCell(dataRecv, &row, &col);
+        printf("%d-%d\n", row, col);
         on_clicked_set_cell(row, col);
         if (tmp != NULL)
             free(tmp);
@@ -135,7 +136,8 @@ void handleRecvData(char *dataRecv) {
     }
 
     if (strcmp(token, PREFIX_NEW_GAME) == 0) {
-        char *account = separationDataAddFriend(dataRecv);
+        strtok(dataRecv, SEPARATOR);
+        char *account = strtok(NULL, SEPARATOR);
 
         GtkWidget *box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4);
         gtk_widget_set_visible(GTK_WIDGET(box), TRUE);
@@ -170,7 +172,7 @@ void handleRecvData(char *dataRecv) {
         add_class(btnNo, "btn-add");
         gtk_widget_set_visible(btnNo, TRUE);
         on_add_notify(box);
-        free(account);
+//        free(account);
         if (tmp != NULL)
             free(tmp);
         return;

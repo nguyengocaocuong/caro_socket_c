@@ -183,3 +183,42 @@ int checkStatusGame(GameStatus *gameStatus, int row, int col, int *winIndex[]) {
     return GAME_STATUS_NEXT_CELL;
 }
 
+
+
+void getNextCell(int matrix[15][15],  int *row, int *col){
+    int r = *row;
+    int c = *col;
+    int tc = c;
+    int tr = r;
+    //check trai
+    while (++tr < 15 && matrix[tr][tc] != 0);
+    if(tr < 15) {
+        *row = tr;
+        *col = tc;
+        return;
+    }
+    tc = c;
+    tr = r;
+    while (--tr >= 0 && matrix[tr][tc] != 0);
+    if(tr >= 0) {
+        *row = tr;
+        *col = tc;
+        return;
+    }
+    tc = c;
+    tr = r;
+    while (++tc < 15 && matrix[tr][tc] != 0);
+    if(tc < 15) {
+        *row = tr;
+        *col = tc;
+        return;
+    }
+    tc = c;
+    tr = r;
+    while (--tc >= 0 && matrix[tr][tc] != 0);
+    if(tc >= 0) {
+        *row = tr;
+        *col = tc;
+        return;
+    }
+}

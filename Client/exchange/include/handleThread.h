@@ -36,7 +36,7 @@ static void *multiModeHandle() {
             strcpy(dataRecv, recvData);
             if (recvSize > 0)
                 handleRecvData(dataRecv);
-            free(dataRecv);
+            if(dataRecv!= NULL ) free(dataRecv);
         }
     }
 }

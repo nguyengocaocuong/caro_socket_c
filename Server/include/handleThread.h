@@ -10,6 +10,7 @@
 #include "handleServer.h"
 #include "structData.h"
 #include "constant.h"
+
 /**
  * Hàm này là hàm xử lí nó như hàm main trong luồng con, xử lý một ván game
  * @param argv : tham số truyền vào cho hàm này, khi khởi tạo luồng, nó chính là thông tin trạng thái của ván game
@@ -28,7 +29,7 @@ static void *multiModeHandleNewGame(void *argv) {
     if (gameStatus->isMachine == NOT_MACHINE)
         sock2 = gameStatus->client[1]->dataClient->sockFd;
     int maxFd;
-    maxFd = gameStatus->isMachine == NOT_MACHINE ? sock1 > sock2 ? sock1 + 1 : sock2 + 1 : sock1;
+    maxFd = gameStatus->isMachine == NOT_MACHINE ? sock1 > sock2 ? sock1 + 1 : sock2 + 1 : sock1 + 1;
     while (1) {
         FD_ZERO(&readFds);
         FD_SET(sock1, &readFds);
@@ -51,7 +52,7 @@ static void *multiModeHandleNewGame(void *argv) {
                     strcpy(dataRecv, recvData);
                     if (dataRecv == NULL || strlen(dataRecv) <= 0) continue;
                     handleRecvDataNewGame(gameStatus, dataRecv, sock1, sock2);
-                    free(dataRecv);
+                    if (dataRecv != NULL) free(dataRecv);
                 }
             }
             if (gameStatus->isMachine == NOT_MACHINE && FD_ISSET(sock2, &readFds)) {
@@ -63,7 +64,7 @@ static void *multiModeHandleNewGame(void *argv) {
                     strcpy(dataRecv, recvData);
                     if (dataRecv == NULL || strlen(dataRecv) <= 0) continue;
                     handleRecvDataNewGame(gameStatus, dataRecv, sock2, sock1);
-                    free(dataRecv);
+                    if (dataRecv != NULL) free(dataRecv);
                 }
             }
         }

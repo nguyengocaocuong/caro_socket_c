@@ -2,9 +2,9 @@
 #include "initClient.h"
 #include "clientError.h"
 int main(int argc, char *argv[]) {
-//
-//    if (argc < 3)
-//        return ERROR_INVALID_PARAMS;
+
+    if (argc < 3)
+        return ERROR_INVALID_PARAMS;
     gtk_init(&argc, &argv);
     GameApplication gameApplication;
 

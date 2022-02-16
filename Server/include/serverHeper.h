@@ -79,5 +79,11 @@ void freeServerData();
  * @return : thời gian hiện tại  (28-10-2000)
  */
 char *getCurrentTime();
-
+/**
+ * Hàm này tạo dữ liệu chứa cell vừa được client chọn
+ * @param row
+ * @param col
+ * @return : dữ liệu (PREFIX_CELL#1#2)
+ */
+char *makeSendDataNextGameStatus(int row, int col);
 #endif

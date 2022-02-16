@@ -10,12 +10,12 @@ int initSocket(const char *address, const int port) {
     if ((userData.sockFd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
         return ERROR_CREATE_SOCKET;
 
-//    userData->serverAddr.sin_port = htons(port);
-//    userData->serverAddr.sin_addr.s_addr = inet_addr(address);
+    userData.serverAddr.sin_port = htons(port);
+    userData.serverAddr.sin_addr.s_addr = inet_addr(address);
 
 //run bug
-    userData.serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    userData.serverAddr.sin_port = htons(5500);
+//    userData.serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+//    userData.serverAddr.sin_port = htons(5501);
     userData.serverAddr.sin_family = AF_INET;
 
     if (connect(userData.sockFd, (struct sockaddr *) &(userData.serverAddr), sizeof(userData.serverAddr)))

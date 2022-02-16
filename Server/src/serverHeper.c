@@ -6,9 +6,9 @@
 #include "constant.h"
 #include "handleList.h"
 
-void writeLog(const Client *client, char *sendData, char *tag) {
-    printf("%5s%25s : %s\n", tag, client->dataClient->name, sendData);
-}
+//void writeLog(const Client *client, char *sendData, char *tag) {
+//    printf("%5s%25s : %s\n", tag, client->dataClient->name, sendData);
+//}
 
 
 char *makeSendDataHistory(int sockId) {
@@ -224,5 +224,17 @@ char *getCurrentTime() {
     char *currentTime = (char *) calloc(1, MAX_LEN_BUFF);
     sprintf(currentTime, "%d-%d-%d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
     return currentTime;
+}
+
+char *makeSendDataNextGameStatus(int row, int col) {
+    char *sendBuff = (char *) calloc(1, MAX_LEN_BUFF);
+    strcat(sendBuff, PREFIX_CELL);
+    strcat(sendBuff, SEPARATOR);
+    sendBuff[6] = row + '0';
+    strcat(sendBuff, SEPARATOR);
+    sendBuff[8] =  col + '0';
+    sendBuff[9] = 0;
+    printf("send : %s\n",sendBuff);
+    return sendBuff;
 }
 

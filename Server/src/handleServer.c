@@ -33,7 +33,7 @@ void handleRecvData(int sockFd) {
     if (strcmp(token, PREFIX_CLOSE) == 0) {
         removeBySocketID(sockFd);
         close(sockFd);
-        free(tmp);
+        if(tmp != NULL) free(tmp);
         return;
     }
     if (strcmp(token, PREFIX_LOGIN) == 0) {
@@ -44,7 +44,7 @@ void handleRecvData(int sockFd) {
         if (isAccount(dataAccount.account, dataAccount.password) ||
             getBySockName(dataAccount.account) != NULL) {
             send(sockFd, PREFIX_FAIL, MAX_LEN_BUFF, 0);
-            free(tmp);
+            if(tmp != NULL) free(tmp);
             return;
         }
 
@@ -53,7 +53,7 @@ void handleRecvData(int sockFd) {
         //Nếu tài khoản đã đăng nhập thì thông báo đăng nhập không thành công
         if (client->dataClient->status == CLIENT_STATUS_ON) {
             send(sockFd, PREFIX_FAIL, MAX_LEN_BUFF, 0);
-            free(tmp);
+            if(tmp != NULL) free(tmp);
             return;
         }
 
@@ -63,7 +63,7 @@ void handleRecvData(int sockFd) {
         //Đặt lại trạng thái của client
         client->dataClient->status = CLIENT_STATUS_ON;
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
-        free(tmp);
+        if(tmp != NULL) free(tmp);
         return;
     }
     if (strcmp(token, PREFIX_REGISTER) == 0) {
@@ -84,22 +84,22 @@ void handleRecvData(int sockFd) {
         strcpy(client->dataClient->password, account.password);
         client->dataClient->status = CLIENT_STATUS_ON;
         send(sockFd, PREFIX_SUCCESS, MAX_LEN_BUFF, 0);
-        free(data);
+        if(data != NULL)free(data);
         return;
     }
     if (strcmp(token, PREFIX_HISTORY) == 0) {
         char *sendData = makeSendDataHistory(sockFd);
         send(sockFd, sendData, MAX_LEN_BUFF, 0);
-        free(sendData);
-        free(tmp);
+        if(sendData!= NULL)free(sendData);
+        if(tmp != NULL) free(tmp);
         return;
     }
     if (strcmp(token, PREFIX_ONLINE) == 0) {
         printf("get online person\n");
         char *sendData = makeSendDataOnlineAccount(sockFd);
         send(sockFd, sendData, MAX_LEN_BUFF, 0);
-        free(tmp);
-        free(sendData);
+       if(tmp != NULL) free(tmp);
+        if(sendData != NULL) free(sendData);
         return;
     }
     if (strcmp(token, PREFIX_NEW_GAME) == 0) {
@@ -134,7 +134,7 @@ void handleRecvData(int sockFd) {
                 printf("pthread_create() error number=%d\n", ret);
                 return;
             }
-            free(tmp);
+            if(tmp !=NULL)free(tmp);
             return;
         }
         else {
@@ -148,7 +148,7 @@ void handleRecvData(int sockFd) {
                 send(client->dataClient->sockFd, sendData, MAX_LEN_BUFF, 0);
                 free(sendData);
             }
-            free(account);
+            if(account!= NULL)free(account);
         }
         free(tmp);
         return;
@@ -298,16 +298,48 @@ void handleRecvDataNewGame(GameStatus *gameStatus, char *recvData, int requestSo
                 send(otherSockFd, sendLost, MAX_LEN_BUFF, 0);
                 printf("%s\n", sendWin);
                 printf("%s\n", sendLost);
-                free(currentTime);
-                free(history);
-                free(sendLost);
-                free(sendWin);
+                if(currentTime != NULL)free(currentTime);
+                if(history != NULL) free(history);
+                if(sendLost != NULL) free(sendLost);
+                if(sendWin != NULL) free(sendWin);
             }
             free(tmp);
             return;
         }
         else {
-            printf("Den luot server\n");
+            int *winIndex[5];
+            gameStatus->gridGame[col][row] =  X_ICON;
+            if (checkStatusGame(gameStatus, col, row, winIndex) == GAME_STATUS_WIN) {
+                Client *winClient = getBySockID(requestSockFd);
+                char *history = (char *) calloc(1, MAX_LEN_BUFF);
+                char *currentTime = getCurrentTime();
+                char *sendWin = makeSendDataWinGame(winIndex);
+                char *sendLost = makeSendDataLostGame(winIndex);
+                sprintf(history, "%s#%s#%s#%s", winClient->dataClient->name, "May", "win",
+                        currentTime);
+                writeFileHistory(history);
+                addList(createDataHistory(history), TAG_HISTORY);
+                free(history);
+                history = (char *) calloc(1, MAX_LEN_BUFF);
+                sprintf(history, "%s#%s#%s#%s", "May", winClient->dataClient->name, "lost",
+                        currentTime);
+                writeFileHistory(history);
+                addList(createDataHistory(history), TAG_HISTORY);
+                send(requestSockFd, sendWin, MAX_LEN_BUFF, 0);
+                printf("%s\n", sendWin);
+                if(currentTime != NULL)free(currentTime);
+                if(history != NULL) free(history);
+                if(sendLost != NULL) free(sendLost);
+                if(sendWin != NULL) free(sendWin);
+                return;
+            }
+//            printf("Den luot server\n");
+            getNextCell(gameStatus->gridGame,&col,&row);
+            char *sendCell = makeSendDataNextGameStatus(row,col);
+            gameStatus->gridGame[col][row] = O_ICON;
+//            printf("%s\n",sendCell);
+            send(requestSockFd, sendCell, MAX_LEN_BUFF, 0);
+            free(sendCell);
             free(tmp);
             return;
         }

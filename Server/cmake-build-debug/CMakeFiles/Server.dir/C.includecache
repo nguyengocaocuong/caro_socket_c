@@ -12,9 +12,11 @@
 structData.h
 ../include/structData.h
 
-../include/handleList.h
+../include/handleServer.h
 structData.h
 ../include/structData.h
+constant.h
+../include/constant.h
 
 ../include/initServer.h
 structData.h
@@ -30,21 +32,13 @@ structData.h
 arpa/inet.h
 -
 
-/home/ubuntu/Desktop/Caro/Server/src/serverHeper.c
-stdlib.h
--
+/home/ubuntu/Desktop/Caro/Server/main.c
 stdio.h
 -
-time.h
--
-string.h
--
 serverHeper.h
-/home/ubuntu/Desktop/Caro/Server/src/serverHeper.h
+-
 initServer.h
-/home/ubuntu/Desktop/Caro/Server/src/initServer.h
-constant.h
-/home/ubuntu/Desktop/Caro/Server/src/constant.h
-handleList.h
-/home/ubuntu/Desktop/Caro/Server/src/handleList.h
+/home/ubuntu/Desktop/Caro/Server/initServer.h
+handleServer.h
+/home/ubuntu/Desktop/Caro/Server/handleServer.h
 

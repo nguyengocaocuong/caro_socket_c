@@ -43,9 +43,7 @@ CMakeFiles/Server.dir/src/initServer.c.o: ../include/structData.h
 CMakeFiles/Server.dir/src/initServer.c.o: ../src/initServer.c
 
 CMakeFiles/Server.dir/src/serverHeper.c.o: ../constant/constant.h
-CMakeFiles/Server.dir/src/serverHeper.c.o: ../include/caroGame.h
 CMakeFiles/Server.dir/src/serverHeper.c.o: ../include/handleList.h
-CMakeFiles/Server.dir/src/serverHeper.c.o: ../include/initServer.h
 CMakeFiles/Server.dir/src/serverHeper.c.o: ../include/serverHeper.h
 CMakeFiles/Server.dir/src/serverHeper.c.o: ../include/structData.h
 CMakeFiles/Server.dir/src/serverHeper.c.o: ../src/serverHeper.c

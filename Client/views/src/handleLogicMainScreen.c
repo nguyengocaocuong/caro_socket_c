@@ -50,7 +50,7 @@ void on_show_history(PersonHistory *personHistory, int size) {
         gtk_box_pack_start(boxHistory, GTK_WIDGET(box), FALSE, FALSE, 0);
     }
 
-    free(personHistory);
+    if(personHistory != NULL)free(personHistory);
 }
 
 
@@ -81,7 +81,7 @@ void on_show_online(PersonHistory *personHistory, int size) {
         gtk_box_pack_start(boxOnline, GTK_WIDGET(box), FALSE, FALSE, 0);
     }
 
-    free(personHistory);
+    if(personHistory != NULL) free(personHistory);
 }
 
 void on_history_clicked(GtkButton *button) {

@@ -22,7 +22,7 @@ char *makeSendDataRegister(char *accountName, char *password) {
     strcat(sendBuff, accountName);
     strcat(sendBuff, SEPARATOR);
     strcat(sendBuff, password);
-
+    if(sendBuff[strlen(sendBuff)] == '\n') sendBuff[strlen(sendBuff)] = 0;
     return sendBuff;
 }
 

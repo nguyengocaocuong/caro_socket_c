@@ -44,9 +44,7 @@ CMakeFiles/Server.dir/src/initServer.c.o
  /home/ubuntu/Desktop/Caro/Server/src/initServer.c
 CMakeFiles/Server.dir/src/serverHeper.c.o
  ../constant/constant.h
- ../include/caroGame.h
  ../include/handleList.h
- ../include/initServer.h
  ../include/serverHeper.h
  ../include/structData.h
  /home/ubuntu/Desktop/Caro/Server/src/serverHeper.c

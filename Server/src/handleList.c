@@ -14,7 +14,6 @@ void addList(void *data, int tag) {
             ((Client *) root)->nextClient = NULL;
             if (serverData.client == NULL) {
                 serverData.client = ((Client *) root);
-                printf("init server\n");
             } else {
                 Client *tmp = serverData.client;
                 while (tmp->nextClient != NULL)
